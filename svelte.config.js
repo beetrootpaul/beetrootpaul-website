@@ -1,6 +1,8 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import adapterStatic from '@sveltejs/adapter-static';
 
+const githubPagesDir = 'docs';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
@@ -11,8 +13,8 @@ const config = {
 		adapter: adapterStatic({
 			// default options are shown. On some platforms
 			// these options are set automatically — see below
-			pages: 'build',
-			assets: 'build',
+			pages: githubPagesDir,
+			assets: githubPagesDir,
 			// TODO: https://svelte.dev/docs/kit/adapter-static#GitHub-Pages
 			// fallback: '404.html'
 			fallback: undefined,
