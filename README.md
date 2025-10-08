@@ -7,3 +7,7 @@ nvm use
 npm install
 npm run dev -- --open
 ```
+
+```shell
+npm run build
+```
