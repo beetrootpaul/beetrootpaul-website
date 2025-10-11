@@ -16,3 +16,7 @@ npm run dev -- --open
 npm run build
 npm run preview -- --open
 ```
+
+## Helpful links
+
+- Prettier options: https://prettier.io/docs/options
