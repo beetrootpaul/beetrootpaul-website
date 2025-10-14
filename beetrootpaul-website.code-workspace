@@ -1,0 +1,22 @@
+{
+	"extensions": {
+		"recommendations": [
+			"svelte.svelte-vscode"
+		]
+	},
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.rulers": [
+			80
+		],
+		"files.exclude": {
+			"**/.DS_Store": true,
+			"**/.git/": true,
+			"**/.idea/": true
+		}
+	}
+}
