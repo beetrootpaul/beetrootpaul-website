@@ -21,6 +21,10 @@
 <style>
 	:global(html) {
 		font-family: 'Maven Pro', sans-serif;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: 0.125rem;
+		line-height: 1.25rem;
 	}
 
 	/* Make sure there are no white margins on the top of the page */
