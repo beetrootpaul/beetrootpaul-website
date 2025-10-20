@@ -68,6 +68,7 @@
 		height: 24rem;
 		background-size: cover;
 		background-position: 50%;
+		background-repeat: no-repeat;
 	}
 
 	.header-content {
@@ -129,6 +130,53 @@
 
 		&:hover {
 			background-color: var(--peach);
+		}
+	}
+
+	@media screen and (max-width: 479px) {
+		.card {
+			width: 95%;
+			margin: 1rem auto;
+		}
+
+		.header-bg {
+			height: 16rem;
+			background-size: auto 256px;
+		}
+
+		.header-content {
+			box-sizing: border-box;
+			height: 16rem;
+			padding-left: 16px;
+			padding-right: 16px;
+
+			img {
+				margin-top: 0;
+				margin-bottom: 0;
+				width: 5rem;
+				height: 5rem;
+			}
+
+			h1 {
+				margin-top: 10px;
+				font-size: 1.6rem;
+			}
+
+			h2 {
+				margin-top: 0;
+				font-size: 1rem;
+			}
+		}
+
+		.links {
+			padding-left: 4px;
+			padding-right: 4px;
+		}
+
+		.link {
+			padding-left: 16px;
+			padding-right: 16px;
+			font-size: 16px;
 		}
 	}
 </style>
