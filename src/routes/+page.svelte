@@ -126,5 +126,9 @@
 		&:not(.with-icon) {
 			text-align: center;
 		}
+
+		&:hover {
+			background-color: var(--peach);
+		}
 	}
 </style>
