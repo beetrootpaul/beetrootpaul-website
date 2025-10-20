@@ -43,10 +43,12 @@
 		--white: #ffffff;
 	}
 
+	:global(body) {
+		background-color: var(--peach);
+	}
 	.container {
 		width: 100vw;
-		height: 100vh;
-		background-color: var(--peach);
+		min-height: 100%;
 	}
 
 	.card {
