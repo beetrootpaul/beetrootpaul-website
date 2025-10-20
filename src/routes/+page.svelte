@@ -22,11 +22,16 @@
 		<div class="links">
 			{#each links as link}
 				<a
-					class={['link', { 'with-icon': link.icon }]}
+					class={['link', { 'with-icon': !!link.icon }]}
 					href={link.href}
 					target="_blank"
 				>
-					{link.label}
+					{#if link.icon}
+						<div>{link.label}</div>
+						<img src={asset(link.icon)} alt="" role="presentation" />
+					{:else}
+						{link.label}
+					{/if}
 				</a>
 			{/each}
 		</div>
@@ -81,8 +86,8 @@
 		color: var(--white);
 		text-shadow: -1px 2px 1px #000;
 		flex-direction: column;
-		place-items: center;
 		justify-content: center;
+		place-items: center;
 
 		img {
 			margin-top: -20px;
@@ -124,12 +129,26 @@
 		font-weight: 600;
 		text-decoration: none;
 
+		&:hover {
+			background-color: var(--peach);
+		}
+
 		&:not(.with-icon) {
 			text-align: center;
 		}
 
-		&:hover {
-			background-color: var(--peach);
+		&.with-icon {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			place-items: center;
+
+			img {
+				width: 24px;
+				max-height: 24px;
+				margin-top: -8px;
+				margin-bottom: -8px;
+			}
 		}
 	}
 

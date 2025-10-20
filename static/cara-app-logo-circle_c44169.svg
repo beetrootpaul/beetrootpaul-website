@@ -1,0 +1,7 @@
+<!-- Downloaded from: https://blog.cara.app/cara-logos -->
+<!-- Inverted solids with transparents to avoid the problem of a defined color of "C" over the circle. -->
+<!-- Made the circle border thicker. -->
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<circle fill="transparent" stroke="#c44169" cx="100" cy="100" r="99.5" stroke-width="4"/>
+<path fill="#c44169" d="M131.544 80.5368L148.434 57.8122C121.609 36.5266 80.6364 37.8603 57.0492 64.4295C49.232 73.2351 44.2061 84.7227 43.6259 98.6576C42.8187 118.045 51.5272 136 65.1029 145.638C90.7819 163.867 125.354 159.468 149.997 142.187L134.899 118.121C116.778 132.215 83.5069 130.872 81.2077 102.684C78.9084 74.4967 110.067 66.4429 131.544 80.5368Z" />
+</svg>
