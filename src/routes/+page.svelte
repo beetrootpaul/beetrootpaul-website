@@ -3,6 +3,7 @@
 	import { links } from '$lib/links.ts';
 
 	const haderBgImage = '/136_Winter_Cottage_-_without_watermark__x2_.png';
+	const logoImage = '/logo_640x640.png';
 </script>
 
 <div class="container">
@@ -12,8 +13,11 @@
 			style="background-image: url({asset(haderBgImage)}); color: red"
 		></div>
 		<div class="header-content">
+			<img src={logoImage} alt="logo" />
 			<h1>beetrootpaul</h1>
-			<h2>pixel art<br />chiptune<br />game dev</h2>
+			<h2 class="header-content-subtitle">
+				pixel art<br />chiptune<br />game dev
+			</h2>
 		</div>
 		<div class="links">
 			{#each links as link}
@@ -36,6 +40,7 @@
 		--cherry: #c44169;
 		--peach: #fca790;
 		--beige: #fdcbb0;
+		--white: #ffffff;
 	}
 
 	.container {
@@ -45,6 +50,7 @@
 	}
 
 	.card {
+		position: relative;
 		display: flex;
 		margin: 2rem auto;
 		box-shadow: 0 0 16px #0000007d;
@@ -60,6 +66,43 @@
 		height: 24rem;
 		background-size: cover;
 		background-position: 50%;
+	}
+
+	.header-content {
+		position: absolute;
+		display: flex;
+		width: 100%;
+		height: 24rem;
+		background-image: linear-gradient(#1830428c, #1830428c);
+		text-align: center;
+		color: var(--white);
+		text-shadow: -1px 2px 1px #000;
+		flex-direction: column;
+		place-items: center;
+		justify-content: center;
+
+		img {
+			margin-top: -20px;
+			margin-bottom: 3px;
+			box-shadow: -1px 2px 1px #000000b5;
+			border-radius: 50%;
+			width: 8rem;
+			height: 8rem;
+		}
+
+		h1 {
+			margin: 20px 0 10px;
+			line-height: 44px;
+			font-size: 2.375rem;
+			font-weight: 400;
+		}
+
+		h2 {
+			margin: 16px 0 0;
+			line-height: 2rem;
+			font-size: 1.5rem;
+			font-weight: 400;
+		}
 	}
 
 	.links {
