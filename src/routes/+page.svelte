@@ -13,7 +13,7 @@
 			style="background-image: url({asset(haderBgImage)}); color: red"
 		></div>
 		<div class="header-content">
-			<img src={logoImage} alt="logo" />
+			<img src={asset(logoImage)} alt="logo" />
 			<h1>beetrootpaul</h1>
 			<h2 class="header-content-subtitle">
 				pixel art<br />chiptune<br />game dev
