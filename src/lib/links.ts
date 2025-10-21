@@ -11,7 +11,7 @@ export const links: Link[] = [
 	},
 	{
 		label: 'my portfolio',
-		href: '/portfolio',
+		href: 'portfolio',
 	},
 	{
 		label: 'my metal posters',
