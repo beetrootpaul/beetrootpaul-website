@@ -1,7 +1,8 @@
 {
 	"extensions": {
 		"recommendations": [
-			"svelte.svelte-vscode"
+			"svelte.svelte-vscode",
+			"vitest.explorer"
 		]
 	},
 	"folders": [

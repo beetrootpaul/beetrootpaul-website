@@ -10,6 +10,13 @@ npm install
 npm run dev -- --open
 ```
 
+```shell
+nvm use
+npm install
+npx playwright install
+npm test
+```
+
 ## Static build
 
 ```shell
