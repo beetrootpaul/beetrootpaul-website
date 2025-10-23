@@ -1,4 +1,6 @@
-<script>
+<svelte:options runes={true} />
+
+<script lang="ts">
 	import { asset } from '$app/paths';
 	import { links } from '$lib/links.ts';
 
@@ -39,18 +41,10 @@
 </div>
 
 <style>
-	/* colors */
-	:global(:root) {
-		--teal: #183042;
-		--cherry: #c44169;
-		--peach: #fca790;
-		--beige: #fdcbb0;
-		--white: #ffffff;
-	}
-
 	:global(body) {
 		background-color: var(--peach);
 	}
+
 	.container {
 		width: 100vw;
 		min-height: 100%;

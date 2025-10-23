@@ -19,6 +19,15 @@
 {@render children?.()}
 
 <style>
+	/* colors */
+	:global(:root) {
+		--teal: #183042;
+		--cherry: #c44169;
+		--peach: #fca790;
+		--beige: #fdcbb0;
+		--white: #ffffff;
+	}
+
 	:global(html) {
 		font-family: 'Maven Pro', sans-serif;
 		font-size: 1rem;
