@@ -23,10 +23,8 @@ npm run preview -- --open
 
 ## Attributions
 
-### Lightbox2
+### Fullscreen Lightbox Basic
 
-This page uses Lightbox2 library.
-
-- website: https://lokeshdhakar.com/projects/lightbox2
-- creator: Lokesh Dhakar (https://lokeshdhakar.com).
+- website: https://fslightbox.com/javascript
+- creator: Piotr Zdziarski
 - license: The MIT License

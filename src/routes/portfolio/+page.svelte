@@ -1,12 +1,10 @@
 <!--
 # Attributions
 
-## Lightbox2
+## Fullscreen Lightbox Basic
 
-This page uses Lightbox2 library.
-
-- website: https://lokeshdhakar.com/projects/lightbox2
-- creator: Lokesh Dhakar (https://lokeshdhakar.com).
+- website: https://fslightbox.com/javascript
+- creator: Piotr Zdziarski
 - license: The MIT License
 -->
 <svelte:options runes={true} />
@@ -30,79 +28,57 @@ This page uses Lightbox2 library.
 		year: 'numeric',
 	});
 
-	function isYouTube(artworkPath: string): boolean {
-		return artworkPath.startsWith('https://youtu.be/');
-	}
-
-	function hasSound(artworkPath: string): boolean {
-		// This assumption works well for now :D
-		return isYouTube(artworkPath);
-	}
-
 	onMount(() => {
-		const lightboxScript = document.createElement('script');
-		lightboxScript.src = asset(
-			'/third_party/lokesh_lightbox2_v2.11.5/js/lightbox-plus-jquery.js',
+		const fsLightboxScript = document.createElement('script');
+		fsLightboxScript.src = asset(
+			'/third_party/fslightbox-basic-3.7.4/fslightbox.js',
 		);
-
-		lightboxScript.onload = () => {
-			// For all available options see: https://lokeshdhakar.com/projects/lightbox2/#options
-			lightbox.option({
-				alwaysShowNavOnTouchDevices: true,
-				// TODO: remove the label at all
-				disableScrolling: true,
-				fadeDuration: 200,
-				fitImagesInViewport: true,
-				imageFadeDuration: 200,
-				resizeDuration: 200,
-				showImageNumberLabel: false,
-				wrapAround: true,
-			});
+		fsLightboxScript.onload = () => {
+			console.log('Loaded: fslightbox');
 		};
-
-		//     // Append the script to the document's head
-		document.head.appendChild(lightboxScript);
-
+		document.head.appendChild(fsLightboxScript);
 		return () => {
-			document.head.removeChild(lightboxScript);
+			document.head.removeChild(fsLightboxScript);
 		};
 	});
 </script>
-
-<svelte:head>
-	<link
-		href={asset('/third_party/lokesh_lightbox2_v2.11.5/css/lightbox.css')}
-		rel="stylesheet"
-	/>
-</svelte:head>
 
 <header>
 	<h1 style:color={DEBUG ? 'red' : ''}>Portfolio</h1>
 	<a href="/" target="_blank">back to the home page</a>
 </header>
 <main role="list">
-	<!-- TODO: support YT as `.big` -->
-	{#each portfolioEntries.filter((entry) => entry.artwork.big !== 'TODO') as entry}
+	{#each portfolioEntries.filter((entry) => entry.artwork.thumbnail !== 'TODO') as entry}
 		<section class="entry-container" role="listitem">
-			<a
-				class="artwork-thumbnail-container"
-				href={asset(`${assetsBase}${entry.artwork.big}`)}
-				data-lightbox="artwork"
-				data-title={entry.title}
-			>
-				<img
-					class="artwork-thumbnail"
-					src={asset(
-						`${assetsBase}${entry.artwork.thumbnail ?? entry.artwork.big}`,
-					)}
-					alt=""
-				/>
-				{#if hasSound(entry.artwork.big)}
+			<!-- TODO: use some kind of a template? -->
+			{#if 'youtubeUrl' in entry.artwork}
+				<a
+					class="artwork-thumbnail-container"
+					data-fslightbox="artwork"
+					href={entry.artwork.youtubeUrl}
+				>
+					<img
+						class="artwork-thumbnail"
+						src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
+						alt=""
+					/>
 					<div class="click-to-play-overlay">
 						<p>click to play<br />with sound</p>
 					</div>
-				{/if}
-			</a>
+				</a>
+			{:else}
+				<a
+					class="artwork-thumbnail-container"
+					data-fslightbox="artwork"
+					href={asset(`${assetsBase}${entry.artwork.big}`)}
+				>
+					<img
+						class="artwork-thumbnail"
+						src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
+						alt=""
+					/>
+				</a>
+			{/if}
 			<div class="artwork-info">
 				<div class="details">
 					<h1 class="details-title">{entry.title}</h1>
@@ -111,7 +87,7 @@ This page uses Lightbox2 library.
 							<div class="date-finished">
 								{dateFinishedFormatter.format(entry.dateFinished)}
 							</div>
-							<!-- TODO: introduce a template -->
+							<!-- TODO: use some kind of a template? -->
 							{#if entry.type.includes('original_creation')}
 								<div class="type">💡 original creation</div>
 							{/if}
@@ -147,8 +123,7 @@ This page uses Lightbox2 library.
 								{/each}
 							</div>
 							<div class="publications">
-								<!-- TODO: introduce a template -->
-								<!-- TODO: other types, in a proper order -->
+								<!-- TODO: use some kind of a template? -->
 								{#if entry.publications.itchUrl}
 									<a href={entry.publications.itchUrl} target="_blank">
 										<img
@@ -324,10 +299,6 @@ This page uses Lightbox2 library.
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		/* TODO: Needed? */
-		/* align-items: stretch; */
-		/* min-width: 22rem; */
-		/* height: 100%; */
 	}
 
 	.details-title {
@@ -428,16 +399,12 @@ This page uses Lightbox2 library.
 		}
 	}
 
-	:global(.lb-outerContainer) {
-		background-color: var(--dark-grey) !important;
+	/* fslightbos: Hide the "1 / 5" slide number. */
+	:global(.fslightboxsn) {
+		display: none !important;
 	}
-	:global(.lb-image) {
-		border-width: 0 !important;
-	}
-	:global(.lb-caption) {
-		color: var(--white) !important;
-		line-height: 1.8rem !important;
-		font-size: 1rem !important;
-		font-weight: 400 !important;
+	/* fslightbos: Hide the fullscreen button. */
+	:global(.fslightbox-toolbar > button[title='Enter fullscreen']) {
+		display: none !important;
 	}
 </style>
