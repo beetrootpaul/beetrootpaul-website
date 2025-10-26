@@ -8,7 +8,9 @@ type PortfolioEntry = {
 		big: string;
 		thumbnail?: string;
 	}>;
-	type: Array<'pixel_art' | 'game' | 'chiptune' | 'original_creation'>;
+	type: Array<
+		'animation' | 'chiptune' | 'game' | 'original_creation' | 'pixel_art'
+	>;
 	dateFinished: Date;
 	descriptionParagraphs: Array<
 		Array<{
@@ -20,7 +22,10 @@ type PortfolioEntry = {
 	publications: {
 		instagramUrl?: string;
 		itchUrl?: string;
+		lospecUrl?: string;
+		mastodonUrl?: string;
 		xUrl?: string;
+		youtubeUrl?: string;
 	};
 };
 
@@ -587,14 +592,22 @@ export const portfolioEntries: PortfolioEntry[] = [
 			// TODO: fill in
 			big: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art', 'original_creation'],
+		dateFinished: new Date('2021-03-31'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'A minimalistic drawing of piece of software code, which can be recognized by both a syntax highlighting (various keywords are printed with use of different colors) and the presence of a pair of curly braces.',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CNGC1T2nWLS/',
+			lospecUrl:
+				'https://lospec.com/gallery/beetrootpaul/pair-of-curly-brackets',
+			mastodonUrl: 'https://mastodon.art/web/@beetrootpaul/109297894876051958',
+			xUrl: 'https://x.com/nkoder/status/1377337270835945476',
+		},
 		// TODO: fill in
 		progress: [],
 	},

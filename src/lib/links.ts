@@ -20,31 +20,31 @@ export const links: Link[] = [
 	{
 		label: 'Bluesky',
 		href: 'https://bsky.app/profile/beetrootpaul.bsky.social',
-		icon: '/bluesky-brands-solid_c44169.svg',
+		icon: '/brands/bluesky-brands-solid_c44169.svg',
 	},
 	{
 		label: 'Cara',
 		href: 'https://cara.app/beetrootpaul',
-		icon: '/cara-app-logo-circle_c44169.svg',
+		icon: '/brands/cara-app-logo-circle_c44169.svg',
 	},
 	{
 		label: 'GitHub',
 		href: 'https://github.com/beetrootpaul',
-		icon: '/github-brands_c44169.svg',
+		icon: '/brands/github-brands_c44169.svg',
 	},
 	{
 		label: 'itch.io',
 		href: 'https://beetrootpaul.itch.io/',
-		icon: '/itch-io-brands_c44169.svg',
+		icon: '/brands/itch-io-brands_c44169.svg',
 	},
 	{
 		label: 'Mastodon',
 		href: 'https://mastodon.social/@beetrootpaul',
-		icon: '/mastodon-brands_c44169.svg',
+		icon: '/brands/mastodon-brands_c44169.svg',
 	},
 	{
 		label: 'YouTube',
 		href: 'https://www.youtube.com/@beetrootpaul',
-		icon: '/youtube-brands_c44169.svg',
+		icon: '/brands/youtube-brands_c44169.svg',
 	},
 ];

@@ -5,10 +5,12 @@
 	import { portfolioEntries } from '$lib/portfiolio_entries';
 
 	const assetsBase = '/portfolio/';
-	const itchLogo = '/itch-io-brands_c44169.svg';
+	const instagramLogo = '/brands/instagram-brands-inverted_c44169.svg';
+	const itchLogo = '/brands/itch-io-brands_c44169.svg';
+	const mastodonLogo = '/brands/mastodon-brands_c44169.svg';
 	// TODO: Use X logo instead
-	const twitterLogo = '/twitter-brands_c44169.svg';
-	const instagramLogo = '/instagram-brands-inverted_c44169.svg';
+	const twitterLogo = '/brands/twitter-brands_c44169.svg';
+	const youtubeLogo = '/brands/youtube-brands_c44169.svg';
 
 	const dateFinishedFormatter = new Intl.DateTimeFormat('en-US', {
 		month: 'long',
@@ -35,11 +37,9 @@
 					<h1 class="details-title">{entry.title}</h1>
 					<div class="details-rest">
 						<div>
-							<!-- TODO: format date -->
 							<div class="date-finished">
 								{dateFinishedFormatter.format(entry.dateFinished)}
 							</div>
-							<!-- TODO: other types, in a proper order -->
 							<!-- TODO: introduce a template -->
 							{#if entry.type.includes('original_creation')}
 								<div class="type">💡 original creation</div>
@@ -49,6 +49,9 @@
 							{/if}
 							{#if entry.type.includes('chiptune')}
 								<div class="type">🔉 chiptune</div>
+							{/if}
+							{#if entry.type.includes('animation')}
+								<div class="type">▶️ animation</div>
 							{/if}
 							{#if entry.type.includes('pixel_art')}
 								<div class="type">🎨 pixel art</div>
@@ -83,11 +86,19 @@
 										/>
 									</a>
 								{/if}
+								{#if entry.publications.youtubeUrl}
+									<a href={entry.publications.youtubeUrl} target="_blank">
+										<img
+											src={asset(youtubeLogo)}
+											alt="Link to the publication on YouTube"
+										/>
+									</a>
+								{/if}
 								{#if entry.publications.xUrl}
 									<a href={entry.publications.xUrl} target="_blank">
 										<img
 											src={asset(twitterLogo)}
-											alt="Link to the publication on x.com"
+											alt="Link to the publication on X"
 										/>
 									</a>
 								{/if}
@@ -95,7 +106,15 @@
 									<a href={entry.publications.instagramUrl} target="_blank">
 										<img
 											src={asset(instagramLogo)}
-											alt="Link to the publication on instagram.com"
+											alt="Link to the publication on Instagram"
+										/>
+									</a>
+								{/if}
+								{#if entry.publications.mastodonUrl}
+									<a href={entry.publications.mastodonUrl} target="_blank">
+										<img
+											src={asset(mastodonLogo)}
+											alt="Link to the publication on Mastodon"
 										/>
 									</a>
 								{/if}

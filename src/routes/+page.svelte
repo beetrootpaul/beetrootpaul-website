@@ -29,6 +29,7 @@
 			>
 				{#if link.icon}
 					<div>{link.label}</div>
+					<img src={asset(link.icon)} alt="" role="presentation" />
 				{:else}
 					{link.label}
 				{/if}
