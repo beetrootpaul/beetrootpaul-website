@@ -165,17 +165,23 @@
 		box-shadow: 0 0 16px #0000007d;
 		border-radius: 0.25rem;
 		max-width: 60rem;
-		height: 23rem;
+		min-height: 23rem;
 		background-color: var(--peach);
 		padding: 1rem;
 		flex-direction: row;
 		justify-content: space-between;
 		grid-column-gap: 1rem;
 		grid-row-gap: 1rem;
+
+		&:nth-child(even) {
+			flex-direction: row-reverse;
+		}
 	}
 
 	.artwork-thumbnail {
 		border-radius: 0.25rem;
+		width: 21rem;
+		height: 21rem;
 		object-fit: contain;
 		box-shadow: 0 0 11px 7px #0003;
 		/* TODO: Needed? */
@@ -262,6 +268,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+
+		.entry-container:nth-child(even) & {
+			align-items: flex-start;
+		}
 	}
 
 	.progress-heading {
@@ -276,6 +286,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
+		gap: 0.2rem;
 
 		img {
 			object-fit: contain;

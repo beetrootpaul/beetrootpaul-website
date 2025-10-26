@@ -72,6 +72,12 @@ export const portfolioEntries: PortfolioEntry[] = [
 					bold: true,
 				},
 			],
+			// Degug: Additional paragraphs to enforce container higher than its thumbnail.
+			// [
+			// 	{
+			// 		text: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+			// 	},
+			// ],
 		],
 		publications: {
 			instagramUrl: 'https://www.instagram.com/p/Cjamvvqo7y1/',
@@ -121,6 +127,12 @@ export const portfolioEntries: PortfolioEntry[] = [
 					linkUrl: 'https://lospec.com/palette-list/aap-splendor128',
 				},
 			],
+			// Degug: Additional paragraphs to enforce container higher than its thumbnail.
+			// [
+			// 	{
+			// 		text: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+			// 	},
+			// ],
 		],
 		publications: {
 			instagramUrl: 'https://www.instagram.com/p/CeLj5mxI3BE/',
