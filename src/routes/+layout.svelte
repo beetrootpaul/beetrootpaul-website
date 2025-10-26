@@ -21,6 +21,7 @@
 <style>
 	/* colors */
 	:global(:root) {
+		--dark-grey: #333333;
 		--teal: #183042;
 		--cherry: #c44169;
 		--peach: #fca790;
@@ -28,21 +29,12 @@
 		--white: #ffffff;
 	}
 
-	:global(html) {
-		font-family: 'Maven Pro', sans-serif;
-		font-size: 1rem;
-		font-weight: 400;
-		letter-spacing: 0.125rem;
-		line-height: 1.25rem;
-	}
-
 	/* Make sure there are no white margins on the top of the page */
-	:global(body) {
-		display: flex;
-		flex-direction: column;
-		margin: 0;
-	}
 	:global(*) {
 		margin: 0;
+	}
+
+	:global(*) {
+		box-sizing: border-box;
 	}
 </style>

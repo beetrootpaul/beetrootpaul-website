@@ -8,46 +8,51 @@
 	const logoImage = '/logo_640x640.png';
 </script>
 
-<div class="container">
-	<div class="card">
-		<div
-			class="header-bg"
-			style="background-image: url({asset(haderBgImage)}); color: red"
-		></div>
-		<div class="header-content">
-			<img src={asset(logoImage)} alt="logo" />
-			<h1>beetrootpaul</h1>
-			<h2 class="header-content-subtitle">
-				pixel art<br />chiptune<br />game dev
-			</h2>
-		</div>
-		<div class="links">
-			{#each links as link}
-				<a
-					class={['link', { 'with-icon': !!link.icon }]}
-					href={link.href}
-					target="_blank"
-				>
-					{#if link.icon}
-						<div>{link.label}</div>
-						<img src={asset(link.icon)} alt="" role="presentation" />
-					{:else}
-						{link.label}
-					{/if}
-				</a>
-			{/each}
-		</div>
+<div class="card">
+	<div
+		class="header-bg"
+		style="background-image: url({asset(haderBgImage)}); color: red"
+	></div>
+	<div class="header-content">
+		<img src={asset(logoImage)} alt="logo" />
+		<h1>beetrootpaul</h1>
+		<h2 class="header-content-subtitle">
+			pixel art<br />chiptune<br />game dev
+		</h2>
+	</div>
+	<div class="links">
+		{#each links as link}
+			<a
+				class={['link', { 'with-icon': !!link.icon }]}
+				href={link.href}
+				target="_blank"
+			>
+				{#if link.icon}
+					<div>{link.label}</div>
+					<img src={asset(link.icon)} alt="" role="presentation" />
+				{:else}
+					{link.label}
+				{/if}
+			</a>
+		{/each}
 	</div>
 </div>
 
 <style>
-	:global(body) {
-		background-color: var(--peach);
+	:global(html) {
+		height: 100%;
 	}
 
-	.container {
-		width: 100vw;
-		min-height: 100%;
+	:global(body) {
+		display: flex;
+		flex-direction: column;
+		background-color: var(--peach);
+		color: var(--dark-grey);
+		line-height: 1.25rem;
+		font-family: 'Maven Pro', sans-serif;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: 0.125rem;
 	}
 
 	.card {
