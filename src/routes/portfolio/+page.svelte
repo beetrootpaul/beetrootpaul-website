@@ -1,6 +1,18 @@
+<!--
+# Attributions
+
+## Lightbox2
+
+This page uses Lightbox2 library.
+
+- website: https://lokeshdhakar.com/projects/lightbox2
+- creator: Lokesh Dhakar (https://lokeshdhakar.com).
+- license: The MIT License
+-->
 <svelte:options runes={true} />
 
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { asset } from '$app/paths';
 	import { DEBUG } from '$lib/debug';
 	import { portfolioEntries } from '$lib/portfiolio_entries';
@@ -26,7 +38,43 @@
 		// This assumption works well for now :D
 		return isYouTube(artworkPath);
 	}
+
+	onMount(() => {
+		const lightboxScript = document.createElement('script');
+		lightboxScript.src = asset(
+			'/third_party/lokesh_lightbox2_v2.11.5/js/lightbox-plus-jquery.js',
+		);
+
+		lightboxScript.onload = () => {
+			// For all available options see: https://lokeshdhakar.com/projects/lightbox2/#options
+			lightbox.option({
+				alwaysShowNavOnTouchDevices: true,
+				// TODO: remove the label at all
+				disableScrolling: true,
+				fadeDuration: 200,
+				fitImagesInViewport: true,
+				imageFadeDuration: 200,
+				resizeDuration: 200,
+				showImageNumberLabel: false,
+				wrapAround: true,
+			});
+		};
+
+		//     // Append the script to the document's head
+		document.head.appendChild(lightboxScript);
+
+		return () => {
+			document.head.removeChild(lightboxScript);
+		};
+	});
 </script>
+
+<svelte:head>
+	<link
+		href={asset('/third_party/lokesh_lightbox2_v2.11.5/css/lightbox.css')}
+		rel="stylesheet"
+	/>
+</svelte:head>
 
 <header>
 	<h1 style:color={DEBUG ? 'red' : ''}>Portfolio</h1>
@@ -36,7 +84,12 @@
 	<!-- TODO: support YT as `.big` -->
 	{#each portfolioEntries.filter((entry) => entry.artwork.big !== 'TODO') as entry}
 		<section class="entry-container" role="listitem">
-			<div class="artwork-thumbnail-container">
+			<a
+				class="artwork-thumbnail-container"
+				href={asset(`${assetsBase}${entry.artwork.big}`)}
+				data-lightbox="artwork"
+				data-title={entry.title}
+			>
 				<img
 					class="artwork-thumbnail"
 					src={asset(
@@ -49,7 +102,7 @@
 						<p>click to play<br />with sound</p>
 					</div>
 				{/if}
-			</div>
+			</a>
 			<div class="artwork-info">
 				<div class="details">
 					<h1 class="details-title">{entry.title}</h1>
@@ -351,7 +404,7 @@
 
 	.progress-heading {
 		margin-bottom: 0.5rem;
-		color: #333;
+		color: var(--dark-grey);
 		line-height: 20px;
 		font-size: 0.8rem;
 		font-weight: 400;
@@ -373,5 +426,18 @@
 				transform: scale(1.1);
 			}
 		}
+	}
+
+	:global(.lb-outerContainer) {
+		background-color: var(--dark-grey) !important;
+	}
+	:global(.lb-image) {
+		border-width: 0 !important;
+	}
+	:global(.lb-caption) {
+		color: var(--white) !important;
+		line-height: 1.8rem !important;
+		font-size: 1rem !important;
+		font-weight: 400 !important;
 	}
 </style>
