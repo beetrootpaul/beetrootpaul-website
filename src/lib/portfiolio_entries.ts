@@ -6,7 +6,6 @@ type PortfolioEntry = {
 	};
 	progress: Array<{
 		big: string;
-		thumbnail?: string;
 	}>;
 	type: Array<
 		'animation' | 'chiptune' | 'game' | 'original_creation' | 'pixel_art'
@@ -20,6 +19,7 @@ type PortfolioEntry = {
 		}>
 	>;
 	publications: {
+		displateUrl?: string;
 		instagramUrl?: string;
 		itchUrl?: string;
 		lospecUrl?: string;
@@ -589,8 +589,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 	{
 		title: 'Pair of Curly Brackets',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'pairofcurlybrackets_Twitter.png',
+			thumbnail: 'pairofcurlybrackets_x1.png',
 		},
 		type: ['pixel_art', 'original_creation'],
 		dateFinished: new Date('2021-03-31'),
@@ -608,24 +608,35 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/web/@beetrootpaul/109297894876051958',
 			xUrl: 'https://x.com/nkoder/status/1377337270835945476',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
 		title: 'exercise – tileset',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'exercisetileset_20210328_Udemy_challenge_6_tiles_Twitter.png',
+			thumbnail:
+				'exercisetileset_20210328_Udemy_challenge_6_tiles_original.png',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
-		progress: [],
+		type: ['pixel_art', 'original_creation'],
+		dateFinished: new Date('2021-03-29'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'My first ever tileset. Drawn in a GameBoy style.',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5147863',
+			instagramUrl: 'https://www.instagram.com/p/CM-1trvHVGY/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/exercise-tileset',
+			mastodonUrl: 'https://mastodon.art/web/@beetrootpaul/109297886350382852',
+			xUrl: 'https://x.com/nkoder/status/1376324457413931010',
+		},
+		progress: [
+			{
+				big: 'exercisetileset_20210328_Udemy_challenge_6_tiles_behind_the_scenes.png',
+			},
+		],
 	},
 ];

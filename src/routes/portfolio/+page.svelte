@@ -122,18 +122,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="progress">
-					<div class="progress-heading">behind the scenes</div>
-					<div class="progress-items">
-						<!-- TODO: Define "alt" for each progress item. -->
-						{#each entry.progress as item}
-							<img
-								src={asset(`${assetsBase}${item.thumbnail ?? item.big}`)}
-								alt=""
-							/>
-						{/each}
+				{#if entry.progress.length > 0}
+					<div class="progress">
+						<div class="progress-heading">behind the scenes</div>
+						<div class="progress-items">
+							<!-- TODO: Define "alt" for each progress item. -->
+							{#each entry.progress as item}
+								<img src={asset(`${assetsBase}${item.big}`)} alt="" />
+							{/each}
+						</div>
 					</div>
-				</div>
+				{/if}
 			</div>
 		</section>
 	{/each}
@@ -153,6 +152,12 @@
 		font-size: 1rem;
 		font-weight: 400;
 		letter-spacing: 0.125rem;
+
+		/* Prevent bottom from disappearing on the page bottom. */
+		&::after {
+			display: table;
+			content: ' ';
+		}
 	}
 
 	header {
