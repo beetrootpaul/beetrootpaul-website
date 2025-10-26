@@ -1,22 +1,23 @@
 {
 	"extensions": {
 		"recommendations": [
-			"svelte.svelte-vscode"
-		]
+			"esbenp.prettier-vscode",
+			"svelte.svelte-vscode",
+			"vmsynkov.colonize",
+			"wayou.vscode-todo-highlight",
+		],
 	},
 	"folders": [
 		{
-			"path": "."
-		}
+			"path": ".",
+		},
 	],
 	"settings": {
-		"editor.rulers": [
-			80
-		],
+		"editor.rulers": [80],
 		"files.exclude": {
 			"**/.DS_Store": true,
 			"**/.git/": true,
-			"**/.idea/": true
-		}
-	}
+			"**/.idea/": true,
+		},
+	},
 }

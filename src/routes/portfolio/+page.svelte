@@ -23,6 +23,31 @@
 			<div class="entry-info">
 				<div class="entry-info-main">
 					<h1>{entry.title}</h1>
+					<div class="entry-info-main-details">
+						<div>
+							<!-- TODO: format date -->
+							<div>{entry.dateFinished}</div>
+							<!-- TODO: other types, in a proper order -->
+							{#if entry.type.includes('original_creation')}
+								<div>💡 original creation</div>
+							{/if}
+							{#if entry.type.includes('game')}
+								<div>👾 game</div>
+							{/if}
+							{#if entry.type.includes('chiptune')}
+								<div>🔉 chiptune</div>
+							{/if}
+							{#if entry.type.includes('pixel_art')}
+								<div>🎨 pixel art</div>
+							{/if}
+						</div>
+						<div>
+							<!-- TODO: description -->
+							{JSON.stringify(entry.descriptionSegments)}
+							<!-- TODO: publications -->
+							{JSON.stringify(entry.publications)}
+						</div>
+					</div>
 				</div>
 				<div class="entry-info-progress">
 					<div class="entry-info-progress-heading">behind the scenes</div>
@@ -129,6 +154,11 @@
 			line-height: 44px;
 			font-size: 2rem;
 			font-weight: 400;
+		}
+
+		.entry-info-main-details {
+			display: flex;
+			justify-content: space-between;
 		}
 	}
 
