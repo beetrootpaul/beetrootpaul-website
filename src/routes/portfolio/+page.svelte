@@ -187,6 +187,10 @@
 		/* TODO: Needed? */
 		/* position: static; */
 		/* width: 100%; */
+
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 
 	.artwork-info {
@@ -292,6 +296,10 @@
 			object-fit: contain;
 			max-width: 4rem;
 			max-height: 4rem;
+
+			&:hover {
+				transform: scale(1.1);
+			}
 		}
 	}
 </style>
