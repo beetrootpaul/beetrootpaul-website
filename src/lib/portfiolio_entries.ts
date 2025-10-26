@@ -10,13 +10,12 @@ type PortfolioEntry = {
 	}>;
 	type: Array<'pixel_art' | 'game' | 'chiptune' | 'original_creation'>;
 	dateFinished: Date;
-	descriptionSegments: Array<
-		| {
-				text: string;
-				bold?: boolean;
-				linkUrl?: string;
-		  }
-		| 'br'
+	descriptionParagraphs: Array<
+		Array<{
+			text: string;
+			bold?: boolean;
+			linkUrl?: string;
+		}>
 	>;
 	publications: {
 		instagramUrl?: string;
@@ -33,32 +32,46 @@ export const portfolioEntries: PortfolioEntry[] = [
 		},
 		type: ['pixel_art', 'game', 'chiptune', 'original_creation'],
 		dateFinished: new Date('2022-09-25'),
-		descriptionSegments: [
-			{ text: 'My third ' },
-			{ text: 'PICO-8', linkUrl: 'https://www.lexaloffle.com/pico-8.php' },
-			{ text: ' game, created for the ' },
-			{
-				text: 'Basic Shmup Showcase jam',
-				linkUrl: 'https://itch.io/jam/basic-shmup',
-			},
-			{ text: ' organized by ' },
-			{
-				text: '@LazyDevs',
-				linkUrl: 'https://youtube.com/@lazydevs',
-			},
-			{
-				text: '. You can play it on ',
-				bold: true,
-			},
-			{
-				text: 'beetrootpaul.itch.io/dart-07',
-				linkUrl: 'https://beetrootpaul.itch.io/dart-07',
-				bold: true,
-			},
-			{
-				text: ' 🚀',
-				bold: true,
-			},
+		descriptionParagraphs: [
+			[
+				{
+					text: 'My third ',
+				},
+				{
+					text: 'PICO-8',
+					linkUrl: 'https://www.lexaloffle.com/pico-8.php',
+				},
+				{
+					text: ' game, created for the ',
+				},
+				{
+					text: 'Basic Shmup Showcase jam',
+					linkUrl: 'https://itch.io/jam/basic-shmup',
+				},
+				{
+					text: ' organized by ',
+				},
+				{
+					text: '@LazyDevs',
+					linkUrl: 'https://youtube.com/@lazydevs',
+				},
+				{
+					text: '.',
+				},
+				{
+					text: 'You can play it on ',
+					bold: true,
+				},
+				{
+					text: 'beetrootpaul.itch.io/dart-07',
+					linkUrl: 'https://beetrootpaul.itch.io/dart-07',
+					bold: true,
+				},
+				{
+					text: ' 🚀',
+					bold: true,
+				},
+			],
 		],
 		publications: {
 			instagramUrl: 'https://www.instagram.com/p/Cjamvvqo7y1/',
@@ -79,23 +92,35 @@ export const portfolioEntries: PortfolioEntry[] = [
 		},
 		type: ['pixel_art', 'original_creation'],
 		dateFinished: new Date('2022-05-28'),
-		descriptionSegments: [
-			{ text: 'A piece created for a ' },
-			{
-				text: 'Concept Art challenge',
-				linkUrl: 'https://youtu.be/6z60_H_S_gg',
-			},
-			{ text: ' organized by ' },
-			{ text: '@Saultoons', linkUrl: 'https://www.youtube.com/@saultoons' },
-			{
-				text: '. Started with a textual concept, then drew several drafts, and gradually moved towards a final polished art.',
-			},
-			'br',
-			{ text: 'Palette: ' },
-			{
-				text: 'lospec.com/palette-list/aap-splendor128',
-				linkUrl: 'https://lospec.com/palette-list/aap-splendor128',
-			},
+		descriptionParagraphs: [
+			[
+				{
+					text: 'A piece created for a ',
+				},
+				{
+					text: 'Concept Art challenge',
+					linkUrl: 'https://youtu.be/6z60_H_S_gg',
+				},
+				{
+					text: ' organized by ',
+				},
+				{
+					text: '@Saultoons',
+					linkUrl: 'https://www.youtube.com/@saultoons',
+				},
+				{
+					text: '. Started with a textual concept, then drew several drafts, and gradually moved towards a final polished art.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/aap-splendor128',
+					linkUrl: 'https://lospec.com/palette-list/aap-splendor128',
+				},
+			],
 		],
 		publications: {
 			instagramUrl: 'https://www.instagram.com/p/CeLj5mxI3BE/',
@@ -130,7 +155,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -147,7 +172,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -164,7 +189,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -181,7 +206,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -198,7 +223,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -215,7 +240,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -232,7 +257,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -249,7 +274,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -266,7 +291,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -283,7 +308,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -300,7 +325,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -317,7 +342,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -334,7 +359,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -351,7 +376,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -368,7 +393,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -385,7 +410,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -402,7 +427,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -419,7 +444,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -436,7 +461,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -453,7 +478,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -470,7 +495,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -487,7 +512,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -504,7 +529,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -521,7 +546,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -538,7 +563,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -555,7 +580,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
@@ -572,7 +597,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		// TODO: fill in
 		dateFinished: new Date('1990-01-01'),
 		// TODO: fill in
-		descriptionSegments: [],
+		descriptionParagraphs: [],
 		// TODO: fill in
 		publications: {},
 		// TODO: fill in
