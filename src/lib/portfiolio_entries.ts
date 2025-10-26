@@ -1,3 +1,5 @@
+import { DEBUG } from './debug';
+
 type PortfolioEntry = {
 	title: string;
 	artwork: {
@@ -77,12 +79,16 @@ export const portfolioEntries: PortfolioEntry[] = [
 					bold: true,
 				},
 			],
-			// Degug: Additional paragraphs to enforce container higher than its thumbnail.
-			// [
-			// 	{
-			// 		text: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
-			// 	},
-			// ],
+			...(DEBUG
+				? // Additional paragraphs to enforce container higher than its thumbnail.
+					[
+						[
+							{
+								text: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+							},
+						],
+					]
+				: []),
 		],
 		publications: {
 			instagramUrl: 'https://www.instagram.com/p/Cjamvvqo7y1/',
@@ -99,7 +105,10 @@ export const portfolioEntries: PortfolioEntry[] = [
 		title: 'Encounter',
 		artwork: {
 			big: 'encounter_square_x8.png',
-			thumbnail: 'encounter_square_x1.png',
+			thumbnail: DEBUG
+				? // Debug: Non-square low image.
+					'encounter_square_x1_debug_low.png'
+				: 'encounter_square_x1.png',
 		},
 		type: ['pixel_art', 'original_creation'],
 		dateFinished: new Date('2022-05-28'),
@@ -132,12 +141,16 @@ export const portfolioEntries: PortfolioEntry[] = [
 					linkUrl: 'https://lospec.com/palette-list/aap-splendor128',
 				},
 			],
-			// Degug: Additional paragraphs to enforce container higher than its thumbnail.
-			// [
-			// 	{
-			// 		text: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
-			// 	},
-			// ],
+			...(DEBUG
+				? // Additional paragraphs to enforce container higher than its thumbnail.
+					[
+						[
+							{
+								text: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+							},
+						],
+					]
+				: []),
 		],
 		publications: {
 			instagramUrl: 'https://www.instagram.com/p/CeLj5mxI3BE/',
@@ -198,19 +211,57 @@ export const portfolioEntries: PortfolioEntry[] = [
 	{
 		title: 'No Longer a Hero',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'https://youtu.be/D7zTWePkF88',
+			thumbnail: DEBUG
+				? // Debug: Non-square low image.
+					'nolongerahero_x1_debug_low.gif'
+				: 'nolongerahero_x1.gif',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
-		progress: [],
+		type: ['pixel_art', 'animation', 'original_creation', 'chiptune'],
+		dateFinished: new Date('2022-03-06'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'I started with a chiptune in which I wanted to depict a hero who became a villain. Then, I created an animation with 4 colors only. My reference was a ',
+				},
+				{
+					text: 'photo from The Pose Archives',
+					linkUrl: 'https://x.com/theposearchives/status/1443798560806293507',
+				},
+				{
+					text: '.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/fuzzyfour',
+					linkUrl: 'https://lospec.com/palette-list/fuzzyfour',
+				},
+			],
+		],
+		publications: {
+			instagramUrl:
+				'https://twitter.com/beetrootpaul/status/1500782518110466051',
+			xUrl: 'https://x.com/beetrootpaul/status/1500782518110466051',
+			youtubeUrl: 'https://youtu.be/D7zTWePkF88',
+		},
+		progress: [
+			{
+				big: 'nolongerahero_progress_01.png',
+			},
+			{
+				big: 'nolongerahero_progress_02.gif',
+			},
+			{
+				big: 'nolongerahero_progress_05.png',
+			},
+			{
+				big: 'nolongerahero_progress_11.gif',
+			},
+		],
 	},
 	{
 		title: 'Void Bringer',

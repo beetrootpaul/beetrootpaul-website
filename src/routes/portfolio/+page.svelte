@@ -2,6 +2,7 @@
 
 <script lang="ts">
 	import { asset } from '$app/paths';
+	import { DEBUG } from '$lib/debug';
 	import { portfolioEntries } from '$lib/portfiolio_entries';
 
 	const assetsBase = '/portfolio/';
@@ -16,22 +17,39 @@
 		month: 'long',
 		year: 'numeric',
 	});
+
+	function isYouTube(artworkPath: string): boolean {
+		return artworkPath.startsWith('https://youtu.be/');
+	}
+
+	function hasSound(artworkPath: string): boolean {
+		// This assumption works well for now :D
+		return isYouTube(artworkPath);
+	}
 </script>
 
 <header>
-	<h1>Portfolio</h1>
+	<h1 style:color={DEBUG ? 'red' : ''}>Portfolio</h1>
 	<a href="/" target="_blank">back to the home page</a>
 </header>
 <main role="list">
-	{#each portfolioEntries as entry}
+	<!-- TODO: support YT as `.big` -->
+	{#each portfolioEntries.filter((entry) => entry.artwork.big !== 'TODO') as entry}
 		<section class="entry-container" role="listitem">
-			<img
-				class="artwork-thumbnail"
-				src={asset(
-					`${assetsBase}${entry.artwork.thumbnail ?? entry.artwork.big}`,
-				)}
-				alt=""
-			/>
+			<div class="artwork-thumbnail-container">
+				<img
+					class="artwork-thumbnail"
+					src={asset(
+						`${assetsBase}${entry.artwork.thumbnail ?? entry.artwork.big}`,
+					)}
+					alt=""
+				/>
+				{#if hasSound(entry.artwork.big)}
+					<div class="click-to-play-overlay">
+						<p>click to play<br />with sound</p>
+					</div>
+				{/if}
+			</div>
 			<div class="artwork-info">
 				<div class="details">
 					<h1 class="details-title">{entry.title}</h1>
@@ -202,19 +220,43 @@
 		}
 	}
 
-	.artwork-thumbnail {
+	.artwork-thumbnail-container {
+		position: relative;
 		box-shadow: 0 0 11px 7px #0003;
 		border-radius: 0.25rem;
 		width: 21rem;
-		height: 21rem;
+		height: fit-content;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	.artwork-thumbnail {
+		display: block;
 		object-fit: contain;
 		image-rendering: pixelated;
 		/* TODO: Needed? */
 		/* position: static; */
-		/* width: 100%; */
+		width: 100%;
+	}
 
-		&:hover {
-			transform: scale(1.05);
+	.click-to-play-overlay {
+		position: absolute;
+		inset: 0% auto auto 0%;
+		display: flex;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		place-items: center;
+
+		p {
+			border-radius: 0.4rem;
+			background-color: color-mix(in srgb, var(--dark-grey), transparent 32%);
+			padding: 0.2rem 0.6rem 0.3rem;
+			color: var(--white);
+			text-align: center;
+			text-shadow: -1px 1px 1px #183042;
 		}
 	}
 
