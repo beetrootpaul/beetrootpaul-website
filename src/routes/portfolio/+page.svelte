@@ -203,11 +203,12 @@
 	}
 
 	.artwork-thumbnail {
+		box-shadow: 0 0 11px 7px #0003;
 		border-radius: 0.25rem;
 		width: 21rem;
 		height: 21rem;
 		object-fit: contain;
-		box-shadow: 0 0 11px 7px #0003;
+		image-rendering: pixelated;
 		/* TODO: Needed? */
 		/* position: static; */
 		/* width: 100%; */
@@ -289,6 +290,10 @@
 		img {
 			width: 1.6rem;
 			height: 1.6rem;
+
+			&:hover {
+				transform: scale(1.1);
+			}
 		}
 	}
 
@@ -317,9 +322,10 @@
 		gap: 0.2rem;
 
 		img {
-			object-fit: contain;
 			max-width: 4rem;
 			max-height: 4rem;
+			object-fit: contain;
+			image-rendering: pixelated;
 
 			&:hover {
 				transform: scale(1.1);
