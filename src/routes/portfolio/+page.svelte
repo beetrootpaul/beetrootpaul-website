@@ -43,12 +43,14 @@
 	});
 </script>
 
+<!-- TODO: extract some sub-components -->
+
 <header>
 	<h1 style:color={DEBUG ? 'red' : ''}>Portfolio</h1>
 	<a href="/" target="_blank">back to the home page</a>
 </header>
 <main role="list">
-	{#each portfolioEntries.filter((entry) => entry.artwork.thumbnail !== 'TODO') as entry}
+	{#each portfolioEntries.filter((entry) => entry.artwork.thumbnail !== 'TODO') as entry, artworkIndex}
 		<section class="entry-container" role="listitem">
 			<!-- TODO: use some kind of a template? -->
 			{#if 'youtubeUrl' in entry.artwork}
@@ -57,11 +59,7 @@
 					data-fslightbox="artwork"
 					href={entry.artwork.youtubeUrl}
 				>
-					<img
-						class="artwork-thumbnail"
-						src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
-						alt=""
-					/>
+					<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
 					<div class="click-to-play-overlay">
 						<p>click to play<br />with sound</p>
 					</div>
@@ -174,7 +172,13 @@
 						<div class="progress-items">
 							<!-- TODO: Define "alt" for each progress item. -->
 							{#each entry.progress as item}
-								<img src={asset(`${assetsBase}${item.big}`)} alt="" />
+								<a
+									class="artwork-thumbnail-container"
+									data-fslightbox={`artwork-${artworkIndex}-progress`}
+									href={asset(`${assetsBase}${item.big}`)}
+								>
+									<img src={asset(`${assetsBase}${item.big}`)} alt="" />
+								</a>
 							{/each}
 						</div>
 					</div>
@@ -258,15 +262,13 @@
 		&:hover {
 			transform: scale(1.05);
 		}
-	}
 
-	.artwork-thumbnail {
-		display: block;
-		object-fit: contain;
-		image-rendering: pixelated;
-		/* TODO: Needed? */
-		/* position: static; */
-		width: 100%;
+		img {
+			display: block;
+			width: 100%;
+			object-fit: contain;
+			image-rendering: pixelated;
+		}
 	}
 
 	.click-to-play-overlay {
@@ -387,15 +389,20 @@
 		align-items: flex-start;
 		gap: 0.2rem;
 
-		img {
+		a {
 			max-width: 4rem;
 			max-height: 4rem;
-			object-fit: contain;
-			image-rendering: pixelated;
 
 			&:hover {
 				transform: scale(1.1);
 			}
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			object-fit: contain;
+			image-rendering: pixelated;
 		}
 	}
 
