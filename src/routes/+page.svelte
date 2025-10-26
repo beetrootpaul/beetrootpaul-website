@@ -8,6 +8,8 @@
 	const logoImage = '/logo_640x640.png';
 </script>
 
+<!-- TODO: extract some sub-components -->
+
 <div class="card">
 	<div
 		class="header-bg"

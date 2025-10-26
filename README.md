@@ -20,3 +20,11 @@ npm run preview -- --open
 ## Helpful links
 
 - Prettier options: https://prettier.io/docs/options
+
+## Attributions
+
+### Fullscreen Lightbox Basic
+
+- website: https://fslightbox.com/javascript
+- creator: Piotr Zdziarski
+- license: The MIT License

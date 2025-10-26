@@ -1,6 +1,16 @@
+<!--
+# Attributions
+
+## Fullscreen Lightbox Basic
+
+- website: https://fslightbox.com/javascript
+- creator: Piotr Zdziarski
+- license: The MIT License
+-->
 <svelte:options runes={true} />
 
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { asset } from '$app/paths';
 	import { DEBUG } from '$lib/debug';
 	import { portfolioEntries } from '$lib/portfiolio_entries';
@@ -18,38 +28,55 @@
 		year: 'numeric',
 	});
 
-	function isYouTube(artworkPath: string): boolean {
-		return artworkPath.startsWith('https://youtu.be/');
-	}
-
-	function hasSound(artworkPath: string): boolean {
-		// This assumption works well for now :D
-		return isYouTube(artworkPath);
-	}
+	onMount(() => {
+		const fsLightboxScript = document.createElement('script');
+		fsLightboxScript.src = asset(
+			'/third_party/fslightbox-basic-3.7.4/fslightbox.js',
+		);
+		fsLightboxScript.onload = () => {
+			console.log('Loaded: fslightbox');
+		};
+		document.head.appendChild(fsLightboxScript);
+		return () => {
+			document.head.removeChild(fsLightboxScript);
+		};
+	});
 </script>
+
+<!-- TODO: extract some sub-components -->
 
 <header>
 	<h1 style:color={DEBUG ? 'red' : ''}>Portfolio</h1>
 	<a href="/" target="_blank">back to the home page</a>
 </header>
 <main role="list">
-	<!-- TODO: support YT as `.big` -->
-	{#each portfolioEntries.filter((entry) => entry.artwork.big !== 'TODO') as entry}
+	{#each portfolioEntries.filter((entry) => entry.artwork.thumbnail !== 'TODO') as entry, artworkIndex}
 		<section class="entry-container" role="listitem">
-			<div class="artwork-thumbnail-container">
-				<img
-					class="artwork-thumbnail"
-					src={asset(
-						`${assetsBase}${entry.artwork.thumbnail ?? entry.artwork.big}`,
-					)}
-					alt=""
-				/>
-				{#if hasSound(entry.artwork.big)}
+			<!-- TODO: use some kind of a template? -->
+			{#if 'youtubeUrl' in entry.artwork}
+				<a
+					class="artwork-thumbnail-container"
+					data-fslightbox="artwork"
+					href={entry.artwork.youtubeUrl}
+				>
+					<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
 					<div class="click-to-play-overlay">
 						<p>click to play<br />with sound</p>
 					</div>
-				{/if}
-			</div>
+				</a>
+			{:else}
+				<a
+					class="artwork-thumbnail-container"
+					data-fslightbox="artwork"
+					href={asset(`${assetsBase}${entry.artwork.big}`)}
+				>
+					<img
+						class="artwork-thumbnail"
+						src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
+						alt=""
+					/>
+				</a>
+			{/if}
 			<div class="artwork-info">
 				<div class="details">
 					<h1 class="details-title">{entry.title}</h1>
@@ -58,7 +85,7 @@
 							<div class="date-finished">
 								{dateFinishedFormatter.format(entry.dateFinished)}
 							</div>
-							<!-- TODO: introduce a template -->
+							<!-- TODO: use some kind of a template? -->
 							{#if entry.type.includes('original_creation')}
 								<div class="type">💡 original creation</div>
 							{/if}
@@ -94,8 +121,7 @@
 								{/each}
 							</div>
 							<div class="publications">
-								<!-- TODO: introduce a template -->
-								<!-- TODO: other types, in a proper order -->
+								<!-- TODO: use some kind of a template? -->
 								{#if entry.publications.itchUrl}
 									<a href={entry.publications.itchUrl} target="_blank">
 										<img
@@ -146,7 +172,13 @@
 						<div class="progress-items">
 							<!-- TODO: Define "alt" for each progress item. -->
 							{#each entry.progress as item}
-								<img src={asset(`${assetsBase}${item.big}`)} alt="" />
+								<a
+									class="artwork-thumbnail-container"
+									data-fslightbox={`artwork-${artworkIndex}-progress`}
+									href={asset(`${assetsBase}${item.big}`)}
+								>
+									<img src={asset(`${assetsBase}${item.big}`)} alt="" />
+								</a>
 							{/each}
 						</div>
 					</div>
@@ -230,15 +262,13 @@
 		&:hover {
 			transform: scale(1.05);
 		}
-	}
 
-	.artwork-thumbnail {
-		display: block;
-		object-fit: contain;
-		image-rendering: pixelated;
-		/* TODO: Needed? */
-		/* position: static; */
-		width: 100%;
+		img {
+			display: block;
+			width: 100%;
+			object-fit: contain;
+			image-rendering: pixelated;
+		}
 	}
 
 	.click-to-play-overlay {
@@ -271,10 +301,6 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		/* TODO: Needed? */
-		/* align-items: stretch; */
-		/* min-width: 22rem; */
-		/* height: 100%; */
 	}
 
 	.details-title {
@@ -351,7 +377,7 @@
 
 	.progress-heading {
 		margin-bottom: 0.5rem;
-		color: #333;
+		color: var(--dark-grey);
 		line-height: 20px;
 		font-size: 0.8rem;
 		font-weight: 400;
@@ -363,15 +389,29 @@
 		align-items: flex-start;
 		gap: 0.2rem;
 
-		img {
+		a {
 			max-width: 4rem;
 			max-height: 4rem;
-			object-fit: contain;
-			image-rendering: pixelated;
 
 			&:hover {
 				transform: scale(1.1);
 			}
 		}
+
+		img {
+			display: block;
+			width: 100%;
+			object-fit: contain;
+			image-rendering: pixelated;
+		}
+	}
+
+	/* fslightbos: Hide the "1 / 5" slide number. */
+	:global(.fslightboxsn) {
+		display: none !important;
+	}
+	/* fslightbos: Hide the fullscreen button. */
+	:global(.fslightbox-toolbar > button[title='Enter fullscreen']) {
+		display: none !important;
 	}
 </style>

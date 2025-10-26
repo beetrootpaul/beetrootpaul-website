@@ -2,10 +2,15 @@ import { DEBUG } from './debug';
 
 type PortfolioEntry = {
 	title: string;
-	artwork: {
-		big: string;
-		thumbnail?: string;
-	};
+	artwork:
+		| {
+				big: string;
+				thumbnail: string;
+		  }
+		| {
+				youtubeUrl: string;
+				thumbnail: string;
+		  };
 	progress: Array<{
 		big: string;
 	}>;
@@ -36,6 +41,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		title: 'Dart-07',
 		artwork: {
 			big: 'dart07_mission_1_b.gif',
+			thumbnail: 'dart07_mission_1_b.gif',
 		},
 		type: ['pixel_art', 'game', 'chiptune', 'original_creation'],
 		dateFinished: new Date('2022-09-25'),
@@ -179,6 +185,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -196,6 +203,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -211,7 +219,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 	{
 		title: 'No Longer a Hero',
 		artwork: {
-			big: 'https://youtu.be/D7zTWePkF88',
+			youtubeUrl: 'https://youtu.be/D7zTWePkF88',
 			thumbnail: DEBUG
 				? // Debug: Non-square low image.
 					'nolongerahero_x1_debug_low.gif'
@@ -268,6 +276,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -285,6 +294,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -302,6 +312,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -319,6 +330,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -336,6 +348,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -353,6 +366,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -370,6 +384,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -387,6 +402,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -404,6 +420,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -421,6 +438,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -438,6 +456,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -455,6 +474,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -472,6 +492,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -489,6 +510,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -506,6 +528,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -523,6 +546,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -540,6 +564,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -557,6 +582,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -574,6 +600,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -591,6 +618,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -608,6 +636,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
@@ -625,6 +654,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
+			thumbnail: 'TODO',
 		},
 		// TODO: fill in
 		type: [],
