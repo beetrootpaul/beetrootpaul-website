@@ -5,5 +5,11 @@ yarn.lock
 bun.lock
 bun.lockb
 
-# Miscellaneous
+# SvelteKit: Static assets
 /static/
+
+# SvelteKit: Generated wesite
+/docs/
+
+# VS Code: Project config
+/.vscode/
