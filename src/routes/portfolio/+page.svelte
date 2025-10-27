@@ -174,7 +174,6 @@
 							<!-- TODO: Define "alt" for each progress item. -->
 							{#each entry.progress as item}
 								<a
-									class="artwork-thumbnail-container"
 									data-fslightbox={`artwork-${artworkIndex}-progress`}
 									href={asset(`${assetsBase}${item.big}`)}
 								>
@@ -286,6 +285,7 @@
 			background-color: color-mix(in srgb, var(--dark-grey), transparent 32%);
 			padding: 0.2rem 0.6rem 0.3rem;
 			color: var(--white);
+			font-size: 1rem;
 			text-align: center;
 			text-shadow: -1px 1px 1px #183042;
 		}
@@ -404,6 +404,70 @@
 			width: 100%;
 			object-fit: contain;
 			image-rendering: pixelated;
+		}
+	}
+
+	@media screen and (max-width: 991px) {
+		header {
+			max-width: 728px;
+
+			h1 {
+				font-size: 2.5rem;
+			}
+		}
+
+		.entry-container {
+			max-width: 95vw;
+		}
+
+		.artwork-thumbnail-container {
+			width: 16rem;
+		}
+
+		.click-to-play-overlay {
+			p {
+				font-size: 0.9rem;
+			}
+		}
+
+		.details-title {
+			font-size: 1.5rem;
+			line-height: 32px;
+		}
+
+		.details-rest {
+			grid-column-gap: 0.8rem;
+			grid-row-gap: 0.8rem;
+
+			.date-finished {
+				font-size: 0.8rem;
+			}
+
+			.type {
+				font-size: 0.7rem;
+			}
+		}
+
+		.description {
+			font-size: 0.8rem;
+		}
+
+		.publications {
+			img {
+				width: 1.4rem;
+				height: 1.4rem;
+			}
+		}
+
+		.progress-heading {
+			font-size: 0.7rem;
+		}
+
+		.progress-items {
+			a {
+				max-width: 3rem;
+				max-height: 3rem;
+			}
 		}
 	}
 
