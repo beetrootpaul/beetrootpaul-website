@@ -188,7 +188,9 @@
 	{/each}
 </main>
 
-<style>
+<style lang="scss">
+	$bkp1: 991px;
+
 	:global(html) {
 		height: 100%;
 	}
@@ -407,7 +409,7 @@
 		}
 	}
 
-	@media screen and (max-width: 991px) {
+	@media screen and (max-width: $bkp1) {
 		header {
 			max-width: 728px;
 
