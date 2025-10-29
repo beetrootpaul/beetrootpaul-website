@@ -189,7 +189,12 @@
 </main>
 
 <style lang="scss">
-	$bkp1: 991px;
+	// Helper for defining styles for a screen width of a portrait table and below.
+	@mixin bkp1 {
+		@media screen and (max-width: 991px) {
+			@content;
+		}
+	}
 
 	:global(html) {
 		height: 100%;
@@ -218,6 +223,10 @@
 		max-width: 940px;
 		padding: 0 0.5rem;
 
+		@include bkp1 {
+			max-width: 728px;
+		}
+
 		h1 {
 			margin-top: 20px;
 			margin-bottom: 10px;
@@ -226,6 +235,10 @@
 			font-size: 3rem;
 			font-weight: 400;
 			text-shadow: -1px 2px 1px #000;
+
+			@include bkp1 {
+				font-size: 2.5rem;
+			}
 		}
 
 		a {
@@ -249,6 +262,10 @@
 		grid-column-gap: 1rem;
 		grid-row-gap: 1rem;
 
+		@include bkp1 {
+			max-width: 95vw;
+		}
+
 		&:nth-child(even) {
 			flex-direction: row-reverse;
 		}
@@ -260,6 +277,10 @@
 		border-radius: 0.25rem;
 		width: 21rem;
 		height: fit-content;
+
+		@include bkp1 {
+			width: 16rem;
+		}
 
 		&:hover {
 			transform: scale(1.05);
@@ -290,6 +311,10 @@
 			font-size: 1rem;
 			text-align: center;
 			text-shadow: -1px 1px 1px #183042;
+
+			@include bkp1 {
+				font-size: 0.9rem;
+			}
 		}
 	}
 
@@ -313,6 +338,11 @@
 		line-height: 44px;
 		font-size: 2rem;
 		font-weight: 400;
+
+		@include bkp1 {
+			line-height: 32px;
+			font-size: 1.5rem;
+		}
 	}
 
 	.details-rest {
@@ -321,12 +351,26 @@
 		grid-column-gap: 1rem;
 		grid-row-gap: 1rem;
 
+		@include bkp1 {
+			grid-column-gap: 0.8rem;
+			grid-row-gap: 0.8rem;
+		}
+
 		.date-finished {
 			margin-bottom: 1rem;
+			font-size: 1rem;
+
+			@include bkp1 {
+				font-size: 0.8rem;
+			}
 		}
 
 		.type {
 			font-size: 0.8rem;
+
+			@include bkp1 {
+				font-size: 0.7rem;
+			}
 		}
 	}
 
@@ -335,6 +379,12 @@
 	}
 
 	.description {
+		font-size: 1rem;
+
+		@include bkp1 {
+			font-size: 0.8rem;
+		}
+
 		/* Prevent margins from collapsing with sibling elements. */
 		&::before,
 		&::after {
@@ -362,6 +412,11 @@
 			width: 1.6rem;
 			height: 1.6rem;
 
+			@include bkp1 {
+				width: 1.4rem;
+				height: 1.4rem;
+			}
+
 			&:hover {
 				transform: scale(1.1);
 			}
@@ -384,6 +439,10 @@
 		line-height: 20px;
 		font-size: 0.8rem;
 		font-weight: 400;
+
+		@include bkp1 {
+			font-size: 0.7rem;
+		}
 	}
 
 	.progress-items {
@@ -396,6 +455,11 @@
 			max-width: 4rem;
 			max-height: 4rem;
 
+			@include bkp1 {
+				max-width: 3rem;
+				max-height: 3rem;
+			}
+
 			&:hover {
 				transform: scale(1.1);
 			}
@@ -406,70 +470,6 @@
 			width: 100%;
 			object-fit: contain;
 			image-rendering: pixelated;
-		}
-	}
-
-	@media screen and (max-width: $bkp1) {
-		header {
-			max-width: 728px;
-
-			h1 {
-				font-size: 2.5rem;
-			}
-		}
-
-		.entry-container {
-			max-width: 95vw;
-		}
-
-		.artwork-thumbnail-container {
-			width: 16rem;
-		}
-
-		.click-to-play-overlay {
-			p {
-				font-size: 0.9rem;
-			}
-		}
-
-		.details-title {
-			font-size: 1.5rem;
-			line-height: 32px;
-		}
-
-		.details-rest {
-			grid-column-gap: 0.8rem;
-			grid-row-gap: 0.8rem;
-
-			.date-finished {
-				font-size: 0.8rem;
-			}
-
-			.type {
-				font-size: 0.7rem;
-			}
-		}
-
-		.description {
-			font-size: 0.8rem;
-		}
-
-		.publications {
-			img {
-				width: 1.4rem;
-				height: 1.4rem;
-			}
-		}
-
-		.progress-heading {
-			font-size: 0.7rem;
-		}
-
-		.progress-items {
-			a {
-				max-width: 3rem;
-				max-height: 3rem;
-			}
 		}
 	}
 
