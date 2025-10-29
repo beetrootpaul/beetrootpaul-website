@@ -189,9 +189,15 @@
 </main>
 
 <style lang="scss">
-	// Helper for defining styles for a screen width of a portrait table and below.
+	// Helper for defining styles for a screen width of a portrait tablet and below.
 	@mixin bkp1 {
 		@media screen and (max-width: 991px) {
+			@content;
+		}
+	}
+	// Helper for defining styles for a screen width of a landscape mobile and below.
+	@mixin bkp2 {
+		@media screen and (max-width: 767px) {
 			@content;
 		}
 	}
@@ -225,6 +231,10 @@
 
 		@include bkp1 {
 			max-width: 728px;
+		}
+
+		@include bkp2() {
+			max-width: none;
 		}
 
 		h1 {
@@ -266,8 +276,18 @@
 			max-width: 95vw;
 		}
 
+		@include bkp2() {
+			border-radius: 0;
+			max-width: 100vw;
+			flex-direction: column;
+		}
+
 		&:nth-child(even) {
 			flex-direction: row-reverse;
+
+			@include bkp2() {
+				flex-direction: column;
+			}
 		}
 	}
 
@@ -280,6 +300,10 @@
 
 		@include bkp1 {
 			width: 16rem;
+		}
+
+		@include bkp2() {
+			width: 15rem;
 		}
 
 		&:hover {
@@ -314,6 +338,10 @@
 
 			@include bkp1 {
 				font-size: 0.9rem;
+			}
+
+			@include bkp2() {
+				font-size: 0.8rem;
 			}
 		}
 	}
@@ -430,6 +458,10 @@
 
 		.entry-container:nth-child(even) & {
 			align-items: flex-start;
+
+			@include bkp2() {
+				align-items: flex-end;
+			}
 		}
 	}
 
