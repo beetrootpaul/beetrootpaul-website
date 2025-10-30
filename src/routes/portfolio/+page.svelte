@@ -201,6 +201,12 @@
 			@content;
 		}
 	}
+	// Helper for defining styles for a screen width of a portrait mobile and below.
+	@mixin bkp3 {
+		@media screen and (max-width: 479px) {
+			@content;
+		}
+	}
 
 	:global(html) {
 		height: 100%;
@@ -249,12 +255,20 @@
 			@include bkp1 {
 				font-size: 2.5rem;
 			}
+
+			@include bkp3() {
+				font-size: 2rem;
+			}
 		}
 
 		a {
 			margin-left: 0.2rem;
 			color: var(--white);
 			font-size: 0.8rem;
+
+			@include bkp3() {
+				font-size: 0.7rem;
+			}
 		}
 	}
 
@@ -282,6 +296,10 @@
 			flex-direction: column;
 		}
 
+		@include bkp3() {
+			padding: 0.25rem;
+		}
+
 		&:nth-child(even) {
 			flex-direction: row-reverse;
 
@@ -297,6 +315,7 @@
 		border-radius: 0.25rem;
 		width: 21rem;
 		height: fit-content;
+		overflow: hidden;
 
 		@include bkp1 {
 			width: 16rem;
@@ -304,6 +323,10 @@
 
 		@include bkp2() {
 			width: 15rem;
+		}
+
+		@include bkp3() {
+			width: 8rem;
 		}
 
 		&:hover {
@@ -413,6 +436,10 @@
 			font-size: 0.8rem;
 		}
 
+		@include bkp3 {
+			font-size: 0.7rem;
+		}
+
 		/* Prevent margins from collapsing with sibling elements. */
 		&::before,
 		&::after {
@@ -445,6 +472,11 @@
 				height: 1.4rem;
 			}
 
+			@include bkp3() {
+				width: 1.3rem;
+				height: 1.3rem;
+			}
+
 			&:hover {
 				transform: scale(1.1);
 			}
@@ -475,6 +507,10 @@
 		@include bkp1 {
 			font-size: 0.7rem;
 		}
+
+		@include bkp3 {
+			font-size: 0.6rem;
+		}
 	}
 
 	.progress-items {
@@ -490,6 +526,11 @@
 			@include bkp1 {
 				max-width: 3rem;
 				max-height: 3rem;
+			}
+
+			@include bkp3 {
+				max-width: 2.5rem;
+				max-height: 2.5rem;
 			}
 
 			&:hover {
