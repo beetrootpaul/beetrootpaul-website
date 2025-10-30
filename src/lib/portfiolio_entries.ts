@@ -1,6 +1,6 @@
 import { DEBUG } from './debug';
 
-type PortfolioEntry = {
+export type PortfolioEntry = {
 	title: string;
 	artwork:
 		| {
@@ -14,9 +14,7 @@ type PortfolioEntry = {
 	progress: Array<{
 		big: string;
 	}>;
-	type: Array<
-		'animation' | 'chiptune' | 'game' | 'original_creation' | 'pixel_art'
-	>;
+	type: Array<'animation' | 'chiptune' | 'game' | 'oc' | 'pixel_art'>;
 	dateFinished: Date;
 	descriptionParagraphs: Array<
 		Array<{
@@ -43,7 +41,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 			big: 'dart07_mission_1_b.gif',
 			thumbnail: 'dart07_mission_1_b.gif',
 		},
-		type: ['pixel_art', 'game', 'chiptune', 'original_creation'],
+		type: ['pixel_art', 'game', 'chiptune', 'oc'],
 		dateFinished: new Date('2022-09-25'),
 		descriptionParagraphs: [
 			[
@@ -116,7 +114,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 					'encounter_square_x1_debug_low.png'
 				: 'encounter_square_x1.png',
 		},
-		type: ['pixel_art', 'original_creation'],
+		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2022-05-28'),
 		descriptionParagraphs: [
 			[
@@ -225,7 +223,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 					'nolongerahero_x1_debug_low.gif'
 				: 'nolongerahero_x1.gif',
 		},
-		type: ['pixel_art', 'animation', 'original_creation', 'chiptune'],
+		type: ['pixel_art', 'animation', 'oc', 'chiptune'],
 		dateFinished: new Date('2022-03-06'),
 		descriptionParagraphs: [
 			[
@@ -673,7 +671,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 			big: 'pairofcurlybrackets_Twitter.png',
 			thumbnail: 'pairofcurlybrackets_x1.png',
 		},
-		type: ['pixel_art', 'original_creation'],
+		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2021-03-31'),
 		descriptionParagraphs: [
 			[
@@ -698,7 +696,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 			thumbnail:
 				'exercisetileset_20210328_Udemy_challenge_6_tiles_original.png',
 		},
-		type: ['pixel_art', 'original_creation'],
+		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2021-03-29'),
 		descriptionParagraphs: [
 			[

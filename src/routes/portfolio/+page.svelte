@@ -13,7 +13,10 @@
 	import { onMount } from 'svelte';
 	import { asset } from '$app/paths';
 	import { DEBUG } from '$lib/debug';
-	import { portfolioEntries } from '$lib/portfiolio_entries';
+	import {
+		portfolioEntries,
+		type PortfolioEntry,
+	} from '$lib/portfiolio_entries';
 
 	const assetsBase = '/portfolio/';
 	const instagramLogo = '/brands/instagram-brands-inverted_c44169.svg';
@@ -43,7 +46,27 @@
 	});
 </script>
 
-<!-- TODO: extract some sub-components -->
+{#snippet typeEl(
+	entry: PortfolioEntry,
+	type: PortfolioEntry['type'][0],
+	text: string,
+)}
+	{#if entry.type.includes(type)}
+		<div class="type">{text}</div>
+	{/if}
+{/snippet}
+
+{#snippet publicationEl(
+	url: string | undefined,
+	logo: string,
+	nameForAlt: string,
+)}
+	{#if url}
+		<a href={url} target="_blank">
+			<img src={asset(logo)} alt="Link to the publication on {nameForAlt}" />
+		</a>
+	{/if}
+{/snippet}
 
 <header>
 	<h1 style:color={DEBUG ? 'red' : ''}>Portfolio</h1>
@@ -86,22 +109,11 @@
 							<div class="date-finished">
 								{dateFinishedFormatter.format(entry.dateFinished)}
 							</div>
-							<!-- TODO: use some kind of a template? -->
-							{#if entry.type.includes('original_creation')}
-								<div class="type">💡 original creation</div>
-							{/if}
-							{#if entry.type.includes('game')}
-								<div class="type">👾 game</div>
-							{/if}
-							{#if entry.type.includes('chiptune')}
-								<div class="type">🔉 chiptune</div>
-							{/if}
-							{#if entry.type.includes('animation')}
-								<div class="type">▶️ animation</div>
-							{/if}
-							{#if entry.type.includes('pixel_art')}
-								<div class="type">🎨 pixel art</div>
-							{/if}
+							{@render typeEl(entry, 'oc', '💡 original creation')}
+							{@render typeEl(entry, 'game', '👾 game')}
+							{@render typeEl(entry, 'chiptune', '🔉 chiptune')}
+							{@render typeEl(entry, 'animation', '▶️ animation')}
+							{@render typeEl(entry, 'pixel_art', '🎨 pixel art')}
 						</div>
 						<div class="details-rest-description-and-publications">
 							<div class="description">
@@ -122,47 +134,32 @@
 								{/each}
 							</div>
 							<div class="publications">
-								<!-- TODO: use some kind of a template? -->
-								{#if entry.publications.itchUrl}
-									<a href={entry.publications.itchUrl} target="_blank">
-										<img
-											src={asset(itchLogo)}
-											alt="Link to the publication on itch.io"
-										/>
-									</a>
-								{/if}
-								{#if entry.publications.youtubeUrl}
-									<a href={entry.publications.youtubeUrl} target="_blank">
-										<img
-											src={asset(youtubeLogo)}
-											alt="Link to the publication on YouTube"
-										/>
-									</a>
-								{/if}
-								{#if entry.publications.xUrl}
-									<a href={entry.publications.xUrl} target="_blank">
-										<img
-											src={asset(twitterLogo)}
-											alt="Link to the publication on X"
-										/>
-									</a>
-								{/if}
-								{#if entry.publications.instagramUrl}
-									<a href={entry.publications.instagramUrl} target="_blank">
-										<img
-											src={asset(instagramLogo)}
-											alt="Link to the publication on Instagram"
-										/>
-									</a>
-								{/if}
-								{#if entry.publications.mastodonUrl}
-									<a href={entry.publications.mastodonUrl} target="_blank">
-										<img
-											src={asset(mastodonLogo)}
-											alt="Link to the publication on Mastodon"
-										/>
-									</a>
-								{/if}
+								{@render publicationEl(
+									entry.publications.itchUrl,
+									itchLogo,
+									'itch.io',
+								)}
+								{@render publicationEl(
+									entry.publications.youtubeUrl,
+									youtubeLogo,
+									'YouTube',
+								)}
+								{@render publicationEl(
+									entry.publications.xUrl,
+									// TODO: Use X logo instead
+									twitterLogo,
+									'X',
+								)}
+								{@render publicationEl(
+									entry.publications.instagramUrl,
+									instagramLogo,
+									'Instagram',
+								)}
+								{@render publicationEl(
+									entry.publications.mastodonUrl,
+									mastodonLogo,
+									'Mastodon',
+								)}
 							</div>
 						</div>
 					</div>
