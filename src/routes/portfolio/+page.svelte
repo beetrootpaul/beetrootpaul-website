@@ -13,7 +13,10 @@
 	import { onMount } from 'svelte';
 	import { asset } from '$app/paths';
 	import { DEBUG } from '$lib/debug';
-	import { portfolioEntries } from '$lib/portfiolio_entries';
+	import {
+		portfolioEntries,
+		type PortfolioEntry,
+	} from '$lib/portfiolio_entries';
 
 	const assetsBase = '/portfolio/';
 	const instagramLogo = '/brands/instagram-brands-inverted_c44169.svg';
@@ -43,7 +46,112 @@
 	});
 </script>
 
-<!-- TODO: extract some sub-components -->
+{#snippet artworkThumbnail(entry: PortfolioEntry)}
+	{#if 'youtubeUrl' in entry.artwork}
+		<a
+			class="artwork-thumbnail-container"
+			data-fslightbox="artwork"
+			href={entry.artwork.youtubeUrl}
+		>
+			<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
+			<div class="click-to-play-overlay">
+				<p>click to play<br />with sound</p>
+			</div>
+		</a>
+	{:else}
+		<a
+			class="artwork-thumbnail-container"
+			data-fslightbox="artwork"
+			href={asset(`${assetsBase}${entry.artwork.big}`)}
+		>
+			<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
+		</a>
+	{/if}
+{/snippet}
+
+{#snippet dataFinishedAndTypes(
+	entry: PortfolioEntry,
+	opts: { mobile: boolean },
+)}
+	<div class={opts.mobile ? 'mobile' : 'tablet-and-desktop'}>
+		<div class="date-finished">
+			{dateFinishedFormatter.format(entry.dateFinished)}
+		</div>
+		{@render typeEl(entry, 'oc', '💡 original creation')}
+		{@render typeEl(entry, 'game', '👾 game')}
+		{@render typeEl(entry, 'chiptune', '🔉 chiptune')}
+		{@render typeEl(entry, 'animation', '▶️ animation')}
+		{@render typeEl(entry, 'pixel_art', '🎨 pixel art')}
+	</div>
+{/snippet}
+
+{#snippet typeEl(
+	entry: PortfolioEntry,
+	type: PortfolioEntry['type'][0],
+	text: string,
+)}
+	{#if entry.type.includes(type)}
+		<div class="type">{text}</div>
+	{/if}
+{/snippet}
+
+{#snippet descriptionAndPublications(entry: PortfolioEntry)}
+	<div class="details-rest-description-and-publications">
+		<div class="description">
+			{#each entry.descriptionParagraphs as paragraph}
+				<p>
+					{#each paragraph as { text, bold, linkUrl }}
+						{#if linkUrl && bold}
+							<strong><a href={linkUrl}>{text}</a></strong>
+						{:else if linkUrl}
+							<a href={linkUrl}>{text}</a>
+						{:else if bold}
+							<strong>{text}</strong>
+						{:else}
+							{text}
+						{/if}
+					{/each}
+				</p>
+			{/each}
+		</div>
+		<div class="publications">
+			{@render publicationEl(entry.publications.itchUrl, itchLogo, 'itch.io')}
+			{@render publicationEl(
+				entry.publications.youtubeUrl,
+				youtubeLogo,
+				'YouTube',
+			)}
+			{@render publicationEl(
+				entry.publications.xUrl,
+				// TODO: Use X logo instead
+				twitterLogo,
+				'X',
+			)}
+			{@render publicationEl(
+				entry.publications.instagramUrl,
+				instagramLogo,
+				'Instagram',
+			)}
+			{@render publicationEl(
+				entry.publications.mastodonUrl,
+				mastodonLogo,
+				'Mastodon',
+			)}
+		</div>
+	</div>
+{/snippet}
+
+{#snippet publicationEl(
+	url: string | undefined,
+	logo: string,
+	nameForAlt: string,
+)}
+	{#if url}
+		<a href={url} target="_blank">
+			<img src={asset(logo)} alt="Link to the publication on {nameForAlt}" />
+		</a>
+	{/if}
+{/snippet}
 
 <header>
 	<h1 style:color={DEBUG ? 'red' : ''}>Portfolio</h1>
@@ -53,118 +161,16 @@
 <main role="list">
 	{#each portfolioEntries.filter((entry) => entry.artwork.thumbnail !== 'TODO') as entry, artworkIndex}
 		<section class="entry-container" role="listitem">
-			<!-- TODO: use some kind of a template? -->
-			{#if 'youtubeUrl' in entry.artwork}
-				<a
-					class="artwork-thumbnail-container"
-					data-fslightbox="artwork"
-					href={entry.artwork.youtubeUrl}
-				>
-					<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
-					<div class="click-to-play-overlay">
-						<p>click to play<br />with sound</p>
-					</div>
-				</a>
-			{:else}
-				<a
-					class="artwork-thumbnail-container"
-					data-fslightbox="artwork"
-					href={asset(`${assetsBase}${entry.artwork.big}`)}
-				>
-					<img
-						class="artwork-thumbnail"
-						src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
-						alt=""
-					/>
-				</a>
-			{/if}
+			<div class="artwork-and-mobile-finished-and-types">
+				{@render artworkThumbnail(entry)}
+				{@render dataFinishedAndTypes(entry, { mobile: true })}
+			</div>
 			<div class="artwork-info">
 				<div class="details">
 					<h1 class="details-title">{entry.title}</h1>
 					<div class="details-rest">
-						<div>
-							<div class="date-finished">
-								{dateFinishedFormatter.format(entry.dateFinished)}
-							</div>
-							<!-- TODO: use some kind of a template? -->
-							{#if entry.type.includes('original_creation')}
-								<div class="type">💡 original creation</div>
-							{/if}
-							{#if entry.type.includes('game')}
-								<div class="type">👾 game</div>
-							{/if}
-							{#if entry.type.includes('chiptune')}
-								<div class="type">🔉 chiptune</div>
-							{/if}
-							{#if entry.type.includes('animation')}
-								<div class="type">▶️ animation</div>
-							{/if}
-							{#if entry.type.includes('pixel_art')}
-								<div class="type">🎨 pixel art</div>
-							{/if}
-						</div>
-						<div class="details-rest-description-and-publications">
-							<div class="description">
-								{#each entry.descriptionParagraphs as paragraph}
-									<p>
-										{#each paragraph as { text, bold, linkUrl }}
-											{#if linkUrl && bold}
-												<strong><a href={linkUrl}>{text}</a></strong>
-											{:else if linkUrl}
-												<a href={linkUrl}>{text}</a>
-											{:else if bold}
-												<strong>{text}</strong>
-											{:else}
-												{text}
-											{/if}
-										{/each}
-									</p>
-								{/each}
-							</div>
-							<div class="publications">
-								<!-- TODO: use some kind of a template? -->
-								{#if entry.publications.itchUrl}
-									<a href={entry.publications.itchUrl} target="_blank">
-										<img
-											src={asset(itchLogo)}
-											alt="Link to the publication on itch.io"
-										/>
-									</a>
-								{/if}
-								{#if entry.publications.youtubeUrl}
-									<a href={entry.publications.youtubeUrl} target="_blank">
-										<img
-											src={asset(youtubeLogo)}
-											alt="Link to the publication on YouTube"
-										/>
-									</a>
-								{/if}
-								{#if entry.publications.xUrl}
-									<a href={entry.publications.xUrl} target="_blank">
-										<img
-											src={asset(twitterLogo)}
-											alt="Link to the publication on X"
-										/>
-									</a>
-								{/if}
-								{#if entry.publications.instagramUrl}
-									<a href={entry.publications.instagramUrl} target="_blank">
-										<img
-											src={asset(instagramLogo)}
-											alt="Link to the publication on Instagram"
-										/>
-									</a>
-								{/if}
-								{#if entry.publications.mastodonUrl}
-									<a href={entry.publications.mastodonUrl} target="_blank">
-										<img
-											src={asset(mastodonLogo)}
-											alt="Link to the publication on Mastodon"
-										/>
-									</a>
-								{/if}
-							</div>
-						</div>
+						{@render dataFinishedAndTypes(entry, { mobile: false })}
+						{@render descriptionAndPublications(entry)}
 					</div>
 				</div>
 				{#if entry.progress.length > 0}
@@ -189,9 +195,21 @@
 </main>
 
 <style lang="scss">
-	// Helper for defining styles for a screen width of a portrait table and below.
+	// Helper for defining styles for a screen width of a portrait tablet and below.
 	@mixin bkp1 {
 		@media screen and (max-width: 991px) {
+			@content;
+		}
+	}
+	// Helper for defining styles for a screen width of a landscape mobile and below.
+	@mixin bkp2 {
+		@media screen and (max-width: 767px) {
+			@content;
+		}
+	}
+	// Helper for defining styles for a screen width of a portrait mobile and below.
+	@mixin bkp3 {
+		@media screen and (max-width: 479px) {
 			@content;
 		}
 	}
@@ -217,6 +235,22 @@
 		}
 	}
 
+	.tablet-and-desktop {
+		display: block;
+
+		@include bkp2() {
+			display: none;
+		}
+	}
+
+	.mobile {
+		display: none;
+
+		@include bkp2() {
+			display: block;
+		}
+	}
+
 	header {
 		margin-left: auto;
 		margin-right: auto;
@@ -225,6 +259,10 @@
 
 		@include bkp1 {
 			max-width: 728px;
+		}
+
+		@include bkp2() {
+			max-width: none;
 		}
 
 		h1 {
@@ -239,12 +277,21 @@
 			@include bkp1 {
 				font-size: 2.5rem;
 			}
+
+			@include bkp3() {
+				margin-bottom: 8px;
+				font-size: 2rem;
+			}
 		}
 
 		a {
 			margin-left: 0.2rem;
 			color: var(--white);
 			font-size: 0.8rem;
+
+			@include bkp3() {
+				font-size: 0.7rem;
+			}
 		}
 	}
 
@@ -266,8 +313,35 @@
 			max-width: 95vw;
 		}
 
+		@include bkp2() {
+			border-radius: 0;
+			max-width: 100vw;
+			flex-direction: column;
+		}
+
+		@include bkp3() {
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
+			padding: 0.25rem;
+			gap: 0.5rem;
+		}
+
 		&:nth-child(even) {
 			flex-direction: row-reverse;
+
+			@include bkp2() {
+				flex-direction: column;
+			}
+		}
+	}
+
+	.artwork-and-mobile-finished-and-types {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+
+		@include bkp3 {
+			gap: 0.5rem;
 		}
 	}
 
@@ -277,9 +351,18 @@
 		border-radius: 0.25rem;
 		width: 21rem;
 		height: fit-content;
+		overflow: hidden;
 
 		@include bkp1 {
 			width: 16rem;
+		}
+
+		@include bkp2() {
+			width: 15rem;
+		}
+
+		@include bkp3() {
+			width: 8rem;
 		}
 
 		&:hover {
@@ -315,6 +398,10 @@
 			@include bkp1 {
 				font-size: 0.9rem;
 			}
+
+			@include bkp2() {
+				font-size: 0.8rem;
+			}
 		}
 	}
 
@@ -343,6 +430,12 @@
 			line-height: 32px;
 			font-size: 1.5rem;
 		}
+
+		@include bkp3 {
+			margin-top: 0.25rem;
+			margin-bottom: 0.5rem;
+			font-size: 1rem;
+		}
 	}
 
 	.details-rest {
@@ -355,22 +448,32 @@
 			grid-column-gap: 0.8rem;
 			grid-row-gap: 0.8rem;
 		}
+	}
 
-		.date-finished {
-			margin-bottom: 1rem;
-			font-size: 1rem;
+	.date-finished {
+		margin-bottom: 1rem;
+		font-size: 1rem;
 
-			@include bkp1 {
-				font-size: 0.8rem;
-			}
+		@include bkp1 {
+			font-size: 0.8rem;
 		}
 
-		.type {
-			font-size: 0.8rem;
+		@include bkp3 {
+			margin-bottom: 0.25rem;
+			font-size: 0.7rem;
+		}
+	}
 
-			@include bkp1 {
-				font-size: 0.7rem;
-			}
+	.type {
+		font-size: 0.8rem;
+
+		@include bkp1 {
+			font-size: 0.7rem;
+		}
+
+		@include bkp3 {
+			line-height: 16px;
+			font-size: 0.6rem;
 		}
 	}
 
@@ -383,6 +486,10 @@
 
 		@include bkp1 {
 			font-size: 0.8rem;
+		}
+
+		@include bkp3 {
+			font-size: 0.7rem;
 		}
 
 		/* Prevent margins from collapsing with sibling elements. */
@@ -417,6 +524,11 @@
 				height: 1.4rem;
 			}
 
+			@include bkp3() {
+				width: 1.3rem;
+				height: 1.3rem;
+			}
+
 			&:hover {
 				transform: scale(1.1);
 			}
@@ -430,6 +542,10 @@
 
 		.entry-container:nth-child(even) & {
 			align-items: flex-start;
+
+			@include bkp2() {
+				align-items: flex-end;
+			}
 		}
 	}
 
@@ -442,6 +558,11 @@
 
 		@include bkp1 {
 			font-size: 0.7rem;
+		}
+
+		@include bkp3 {
+			margin-bottom: 0.125rem;
+			font-size: 0.6rem;
 		}
 	}
 
@@ -458,6 +579,11 @@
 			@include bkp1 {
 				max-width: 3rem;
 				max-height: 3rem;
+			}
+
+			@include bkp3 {
+				max-width: 2.5rem;
+				max-height: 2.5rem;
 			}
 
 			&:hover {
