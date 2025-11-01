@@ -46,8 +46,34 @@
 	});
 </script>
 
-{#snippet dataFinishedAndTypes(entry: PortfolioEntry)}
-	<div>
+{#snippet artworkThumbnail(entry: PortfolioEntry)}
+	{#if 'youtubeUrl' in entry.artwork}
+		<a
+			class="artwork-thumbnail-container"
+			data-fslightbox="artwork"
+			href={entry.artwork.youtubeUrl}
+		>
+			<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
+			<div class="click-to-play-overlay">
+				<p>click to play<br />with sound</p>
+			</div>
+		</a>
+	{:else}
+		<a
+			class="artwork-thumbnail-container"
+			data-fslightbox="artwork"
+			href={asset(`${assetsBase}${entry.artwork.big}`)}
+		>
+			<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
+		</a>
+	{/if}
+{/snippet}
+
+{#snippet dataFinishedAndTypes(
+	entry: PortfolioEntry,
+	opts: { mobile: boolean },
+)}
+	<div class={opts.mobile ? 'mobile' : 'tablet-and-desktop'}>
 		<div class="date-finished">
 			{dateFinishedFormatter.format(entry.dateFinished)}
 		</div>
@@ -135,32 +161,15 @@
 <main role="list">
 	{#each portfolioEntries.filter((entry) => entry.artwork.thumbnail !== 'TODO') as entry, artworkIndex}
 		<section class="entry-container" role="listitem">
-			<!-- TODO: use some kind of a template? -->
-			{#if 'youtubeUrl' in entry.artwork}
-				<a
-					class="artwork-thumbnail-container"
-					data-fslightbox="artwork"
-					href={entry.artwork.youtubeUrl}
-				>
-					<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
-					<div class="click-to-play-overlay">
-						<p>click to play<br />with sound</p>
-					</div>
-				</a>
-			{:else}
-				<a
-					class="artwork-thumbnail-container"
-					data-fslightbox="artwork"
-					href={asset(`${assetsBase}${entry.artwork.big}`)}
-				>
-					<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
-				</a>
-			{/if}
+			<div class="artwork-and-mobile-finished-and-types">
+				{@render artworkThumbnail(entry)}
+				{@render dataFinishedAndTypes(entry, { mobile: true })}
+			</div>
 			<div class="artwork-info">
 				<div class="details">
 					<h1 class="details-title">{entry.title}</h1>
 					<div class="details-rest">
-						{@render dataFinishedAndTypes(entry)}
+						{@render dataFinishedAndTypes(entry, { mobile: false })}
 						{@render descriptionAndPublications(entry)}
 					</div>
 				</div>
@@ -223,6 +232,22 @@
 		&::after {
 			display: table;
 			content: ' ';
+		}
+	}
+
+	.tablet-and-desktop {
+		display: block;
+
+		@include bkp2() {
+			display: none;
+		}
+	}
+
+	.mobile {
+		display: none;
+
+		@include bkp2() {
+			display: block;
 		}
 	}
 
@@ -304,6 +329,12 @@
 				flex-direction: column;
 			}
 		}
+	}
+
+	.artwork-and-mobile-finished-and-types {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
 	}
 
 	.artwork-thumbnail-container {
@@ -403,22 +434,22 @@
 			grid-column-gap: 0.8rem;
 			grid-row-gap: 0.8rem;
 		}
+	}
 
-		.date-finished {
-			margin-bottom: 1rem;
-			font-size: 1rem;
+	.date-finished {
+		margin-bottom: 1rem;
+		font-size: 1rem;
 
-			@include bkp1 {
-				font-size: 0.8rem;
-			}
-		}
-
-		.type {
+		@include bkp1 {
 			font-size: 0.8rem;
+		}
+	}
 
-			@include bkp1 {
-				font-size: 0.7rem;
-			}
+	.type {
+		font-size: 0.8rem;
+
+		@include bkp1 {
+			font-size: 0.7rem;
 		}
 	}
 
