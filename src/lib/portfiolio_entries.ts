@@ -650,19 +650,34 @@ export const portfolioEntries: PortfolioEntry[] = [
 	{
 		title: 'Ground Cumin',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'TODO',
+			big: 'groundcumin_x8.png',
+			thumbnail: 'groundcumin_x1.png',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2021-04-11'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'Just a 1-bit drawing of a tiny jar of ground cumin.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/bluerown-1bit',
+					linkUrl: 'https://lospec.com/palette-list/bluerown-1bit',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5125077',
+			instagramUrl: 'https://www.instagram.com/p/CNib0j-nOi_/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/ground-cumin',
+			mastodonUrl: 'https://mastodon.art/web/@beetrootpaul/109308786462574894',
+			xUrl: 'https://x.com/nkoder/status/1381333727658311683',
+		},
 		progress: [],
 	},
 	{
