@@ -326,6 +326,7 @@
 
 		@include bkp2() {
 			border-radius: 0;
+			min-height: auto;
 			max-width: 100vw;
 			flex-direction: column;
 		}
