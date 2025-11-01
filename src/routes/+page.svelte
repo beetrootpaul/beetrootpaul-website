@@ -10,6 +10,25 @@
 
 <svelte:head>
 	<title>Beetroot Paul • Home</title>
+	<meta
+		name="description"
+		content="You will find here links to Beetroot Paul's pixel art, chiptune, game dev resources, and other."
+	/>
+	<meta name="theme-color" content="#fca790" />
+
+	<meta property="og:title" content="Beetroot Paul • Home" />
+	<meta
+		property="og:description"
+		content="You will find here links to Beetroot Paul's pixel art, chiptune, game dev resources, and other."
+	/>
+	<meta property="og:type" content="website" />
+
+	<meta property="twitter:title" content="Beetroot Paul • Home" />
+	<meta
+		property="twitter:description"
+		content="You will find here links to Beetroot Paul's pixel art, chiptune, game dev resources, and other."
+	/>
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <!-- TODO: extract some sub-components -->

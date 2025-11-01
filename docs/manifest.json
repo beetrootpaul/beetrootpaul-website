@@ -1,0 +1,22 @@
+{
+	"id": "https://beetrootpaul.com",
+	"start_url": "https://beetrootpaul.com",
+	"scope": "https://beetrootpaul.com",
+	"name": "Beetroot Paul",
+	"short_name": "brp",
+	"display": "browser",
+	"orientation": "any",
+	"background_color": "#183042",
+	"theme_color": "#fca790",
+	"icons": [
+		{
+			"src": "logo_640x640.png"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Portfolio",
+			"url": "/portfolio"
+		}
+	]
+}

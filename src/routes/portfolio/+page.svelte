@@ -48,6 +48,26 @@
 
 <svelte:head>
 	<title>Beetroot Paul • Portfolio</title>
+	<meta
+		name="description"
+		content="A portfolio of my artworks, including pixel art, chiptunes, and tiny video games."
+	/>
+	<meta name="theme-color" content="#fca790" />
+
+	<meta property="og:title" content="Beetroot Paul • Portfolio" />
+	<meta
+		property="og:description"
+		content="A portfolio of my artworks, including pixel art, chiptunes, and tiny video games."
+	/>
+	<meta property="og:type" content="website" />
+
+	<meta property="twitter:title" content="Beetroot Paul • Portfolio" />
+	<meta
+		property="twitter:description"
+		content="A portfolio of my artworks, including pixel art, chiptunes, and tiny video games."
+	/>
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="theme-color" content="#fca790" />
 </svelte:head>
 
 {#snippet artworkThumbnail(entry: PortfolioEntry)}
