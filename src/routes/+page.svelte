@@ -31,8 +31,6 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<!-- TODO: extract some sub-components -->
-
 <div class="card">
 	<div
 		class="header-bg"
