@@ -279,6 +279,7 @@
 			}
 
 			@include bkp3() {
+				margin-bottom: 8px;
 				font-size: 2rem;
 			}
 		}
@@ -319,7 +320,10 @@
 		}
 
 		@include bkp3() {
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
 			padding: 0.25rem;
+			gap: 0.5rem;
 		}
 
 		&:nth-child(even) {
@@ -335,6 +339,10 @@
 		display: flex;
 		flex-direction: row;
 		gap: 1rem;
+
+		@include bkp3 {
+			gap: 0.5rem;
+		}
 	}
 
 	.artwork-thumbnail-container {
@@ -422,6 +430,12 @@
 			line-height: 32px;
 			font-size: 1.5rem;
 		}
+
+		@include bkp3 {
+			margin-top: 0.25rem;
+			margin-bottom: 0.5rem;
+			font-size: 1rem;
+		}
 	}
 
 	.details-rest {
@@ -443,6 +457,11 @@
 		@include bkp1 {
 			font-size: 0.8rem;
 		}
+
+		@include bkp3 {
+			margin-bottom: 0.25rem;
+			font-size: 0.7rem;
+		}
 	}
 
 	.type {
@@ -450,6 +469,11 @@
 
 		@include bkp1 {
 			font-size: 0.7rem;
+		}
+
+		@include bkp3 {
+			line-height: 16px;
+			font-size: 0.6rem;
 		}
 	}
 
@@ -537,6 +561,7 @@
 		}
 
 		@include bkp3 {
+			margin-bottom: 0.125rem;
 			font-size: 0.6rem;
 		}
 	}
