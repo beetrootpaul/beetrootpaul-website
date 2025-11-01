@@ -46,6 +46,19 @@
 	});
 </script>
 
+{#snippet dataFinishedAndTypes(entry: PortfolioEntry)}
+	<div>
+		<div class="date-finished">
+			{dateFinishedFormatter.format(entry.dateFinished)}
+		</div>
+		{@render typeEl(entry, 'oc', '💡 original creation')}
+		{@render typeEl(entry, 'game', '👾 game')}
+		{@render typeEl(entry, 'chiptune', '🔉 chiptune')}
+		{@render typeEl(entry, 'animation', '▶️ animation')}
+		{@render typeEl(entry, 'pixel_art', '🎨 pixel art')}
+	</div>
+{/snippet}
+
 {#snippet typeEl(
 	entry: PortfolioEntry,
 	type: PortfolioEntry['type'][0],
@@ -54,6 +67,52 @@
 	{#if entry.type.includes(type)}
 		<div class="type">{text}</div>
 	{/if}
+{/snippet}
+
+{#snippet descriptionAndPublications(entry: PortfolioEntry)}
+	<div class="details-rest-description-and-publications">
+		<div class="description">
+			{#each entry.descriptionParagraphs as paragraph}
+				<p>
+					{#each paragraph as { text, bold, linkUrl }}
+						{#if linkUrl && bold}
+							<strong><a href={linkUrl}>{text}</a></strong>
+						{:else if linkUrl}
+							<a href={linkUrl}>{text}</a>
+						{:else if bold}
+							<strong>{text}</strong>
+						{:else}
+							{text}
+						{/if}
+					{/each}
+				</p>
+			{/each}
+		</div>
+		<div class="publications">
+			{@render publicationEl(entry.publications.itchUrl, itchLogo, 'itch.io')}
+			{@render publicationEl(
+				entry.publications.youtubeUrl,
+				youtubeLogo,
+				'YouTube',
+			)}
+			{@render publicationEl(
+				entry.publications.xUrl,
+				// TODO: Use X logo instead
+				twitterLogo,
+				'X',
+			)}
+			{@render publicationEl(
+				entry.publications.instagramUrl,
+				instagramLogo,
+				'Instagram',
+			)}
+			{@render publicationEl(
+				entry.publications.mastodonUrl,
+				mastodonLogo,
+				'Mastodon',
+			)}
+		</div>
+	</div>
 {/snippet}
 
 {#snippet publicationEl(
@@ -94,74 +153,15 @@
 					data-fslightbox="artwork"
 					href={asset(`${assetsBase}${entry.artwork.big}`)}
 				>
-					<img
-						class="artwork-thumbnail"
-						src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
-						alt=""
-					/>
+					<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
 				</a>
 			{/if}
 			<div class="artwork-info">
 				<div class="details">
 					<h1 class="details-title">{entry.title}</h1>
 					<div class="details-rest">
-						<div>
-							<div class="date-finished">
-								{dateFinishedFormatter.format(entry.dateFinished)}
-							</div>
-							{@render typeEl(entry, 'oc', '💡 original creation')}
-							{@render typeEl(entry, 'game', '👾 game')}
-							{@render typeEl(entry, 'chiptune', '🔉 chiptune')}
-							{@render typeEl(entry, 'animation', '▶️ animation')}
-							{@render typeEl(entry, 'pixel_art', '🎨 pixel art')}
-						</div>
-						<div class="details-rest-description-and-publications">
-							<div class="description">
-								{#each entry.descriptionParagraphs as paragraph}
-									<p>
-										{#each paragraph as { text, bold, linkUrl }}
-											{#if linkUrl && bold}
-												<strong><a href={linkUrl}>{text}</a></strong>
-											{:else if linkUrl}
-												<a href={linkUrl}>{text}</a>
-											{:else if bold}
-												<strong>{text}</strong>
-											{:else}
-												{text}
-											{/if}
-										{/each}
-									</p>
-								{/each}
-							</div>
-							<div class="publications">
-								{@render publicationEl(
-									entry.publications.itchUrl,
-									itchLogo,
-									'itch.io',
-								)}
-								{@render publicationEl(
-									entry.publications.youtubeUrl,
-									youtubeLogo,
-									'YouTube',
-								)}
-								{@render publicationEl(
-									entry.publications.xUrl,
-									// TODO: Use X logo instead
-									twitterLogo,
-									'X',
-								)}
-								{@render publicationEl(
-									entry.publications.instagramUrl,
-									instagramLogo,
-									'Instagram',
-								)}
-								{@render publicationEl(
-									entry.publications.mastodonUrl,
-									mastodonLogo,
-									'Mastodon',
-								)}
-							</div>
-						</div>
+						{@render dataFinishedAndTypes(entry)}
+						{@render descriptionAndPublications(entry)}
 					</div>
 				</div>
 				{#if entry.progress.length > 0}
