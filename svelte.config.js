@@ -15,9 +15,7 @@ const config = {
 			// these options are set automatically — see below
 			pages: githubPagesDir,
 			assets: githubPagesDir,
-			// TODO: https://svelte.dev/docs/kit/adapter-static#GitHub-Pages
-			// fallback: '404.html'
-			fallback: undefined,
+			fallback: '404.html',
 			precompress: false,
 			strict: true,
 		}),

@@ -245,18 +245,6 @@
 	:global(body) {
 		display: block;
 		background-color: var(--teal);
-		color: var(--dark-grey);
-		line-height: 1.25rem;
-		font-family: 'Maven Pro', sans-serif;
-		font-size: 1rem;
-		font-weight: 400;
-		letter-spacing: 0.125rem;
-
-		/* Prevent bottom from disappearing on the page bottom. */
-		&::after {
-			display: table;
-			content: ' ';
-		}
 	}
 
 	.tablet-and-desktop {

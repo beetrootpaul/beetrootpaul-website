@@ -28,6 +28,28 @@
 		--white: #ffffff;
 	}
 
+	:global(html) {
+		height: 100%;
+	}
+
+	:global(body) {
+		display: flex;
+		flex-direction: column;
+		background-color: var(--peach);
+		color: var(--dark-grey);
+		line-height: 1.25rem;
+		font-family: 'Maven Pro', sans-serif;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: 0.125rem;
+
+		/* Prevent bottom from disappearing on the page bottom. */
+		&::after {
+			display: table;
+			content: ' ';
+		}
+	}
+
 	/* Make sure there are no white margins on the top of the page */
 	:global(*) {
 		margin: 0;
