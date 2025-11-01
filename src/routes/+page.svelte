@@ -8,6 +8,10 @@
 	const logoImage = '/logo_640x640.png';
 </script>
 
+<svelte:head>
+	<title>Beetroot Paul • Home</title>
+</svelte:head>
+
 <!-- TODO: extract some sub-components -->
 
 <div class="card">

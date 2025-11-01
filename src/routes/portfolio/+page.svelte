@@ -46,6 +46,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Beetroot Paul • Portfolio</title>
+</svelte:head>
+
 {#snippet artworkThumbnail(entry: PortfolioEntry)}
 	{#if 'youtubeUrl' in entry.artwork}
 		<a
