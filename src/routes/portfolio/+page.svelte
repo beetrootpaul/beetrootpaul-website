@@ -180,7 +180,7 @@
 <header>
 	<h1 style:color={DEBUG ? 'red' : ''}>Portfolio</h1>
 	<!-- TODO: fix the home page URL for sub-path deployment -->
-	<a href="/" target="_blank">back to the home page</a>
+	<a href="./" target="_blank">back to the home page</a>
 </header>
 <main role="list">
 	{#each portfolioEntries.filter((entry) => entry.artwork.thumbnail !== 'TODO') as entry, artworkIndex}
