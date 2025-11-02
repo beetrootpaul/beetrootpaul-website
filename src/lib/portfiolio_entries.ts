@@ -2,6 +2,11 @@ import { text } from '@sveltejs/kit';
 import { DEBUG } from './debug';
 
 export type PortfolioEntry = {
+	// An unique segment of a URL path. Please keep it really unique so it can be also
+	// treated as an ID.
+	//
+	// NOTE: Not used yet, but might be useful to have it already filled in.
+	slug: string;
 	title: string;
 	artwork:
 		| {
@@ -37,6 +42,8 @@ export type PortfolioEntry = {
 
 export const portfolioEntries: PortfolioEntry[] = [
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Dart-07',
 		artwork: {
 			big: 'dart07_mission_1_b.gif',
@@ -107,6 +114,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Encounter',
 		artwork: {
 			big: 'encounter_square_x8.png',
@@ -180,6 +189,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Table Corner',
 		artwork: {
 			// TODO: fill in
@@ -198,6 +209,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Floating Windmill 2022',
 		artwork: {
 			// TODO: fill in
@@ -216,6 +229,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'No Longer a Hero',
 		artwork: {
 			youtubeUrl: 'https://youtu.be/D7zTWePkF88',
@@ -271,6 +286,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Void Bringer',
 		artwork: {
 			// TODO: fill in
@@ -289,6 +306,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Sorren',
 		artwork: {
 			// TODO: fill in
@@ -307,6 +326,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Winter Cottage',
 		artwork: {
 			// TODO: fill in
@@ -325,6 +346,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Black Hole',
 		artwork: {
 			// TODO: fill in
@@ -343,6 +366,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Dune',
 		artwork: {
 			// TODO: fill in
@@ -361,6 +386,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Bright Future',
 		artwork: {
 			// TODO: fill in
@@ -379,6 +406,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: '#SeptemBIT 2021',
 		artwork: {
 			// TODO: fill in
@@ -397,6 +426,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Let The Adventure Begin',
 		artwork: {
 			// TODO: fill in
@@ -415,6 +446,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Forgotten Planet',
 		artwork: {
 			// TODO: fill in
@@ -433,6 +466,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Animated Emoji ":same:"',
 		artwork: {
 			// TODO: fill in
@@ -451,24 +486,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
-		title: 'Flail',
-		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'TODO',
-		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
-		progress: [],
-	},
-	{
+		// TODO: todo
+		slug: 'TODO',
 		title: 'Study of a Supermarket Fridge',
 		artwork: {
 			// TODO: fill in
@@ -487,96 +506,163 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		slug: '088-kitchen-knife-256px',
 		title: 'Kitchen Knife 256px',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2021-08-10'),
 		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
-		progress: [],
-	},
-	{
-		title: 'CFG 1',
-		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'TODO',
+		descriptionParagraphs: [
+			[
+				{
+					text: 'Just a 1-bit drawing of a kitchen knife 🤷♂️',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/ys-funky-jam',
+					linkUrl: 'https://lospec.com/palette-list/ys-funky-jam',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5125102',
+			instagramUrl: 'https://www.instagram.com/p/CSclv1mIeSs/',
+			xUrl: 'https://twitter.com/nkoder/status/1425545951071162368',
 		},
 		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
 		progress: [],
 	},
 	{
+		slug: '079-castlevania-remaster',
 		title: 'Castlevania Remaster',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art'],
+		dateFinished: new Date('2021-07-18'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'My version of a level 1 scene from Castlevania video game as provided by a ',
+				},
+				{
+					text: 'special PixelDailies prompt',
+					linkUrl:
+						'https://twitter.com/Pixel_Dailies/status/1416367078542434310',
+				},
+				{
+					text: '. I decided for a kinda futuristic look and challenged myself to use 4 colors only.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/jb4',
+					linkUrl: 'https://lospec.com/palette-list/jb4',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CRd73Zdnr9X/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/castlevania-remaster',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109693373908423426',
+			xUrl: 'https://twitter.com/nkoder/status/1416728880359092227',
+		},
 		// TODO: fill in
 		progress: [],
 	},
 	{
+		slug: '073-lucid-oenn-fanart',
 		title: 'Lucid Oenn Fanart',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art', 'animation'],
+		dateFinished: new Date('2021-06-26'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'An animated pixel art drawing of Oenn character from yet-to-be-released ',
+				},
+				{
+					text: 'Lucid game by The Matte Black Studio',
+					linkUrl: 'https://twitter.com/_theMatteBlack',
+				},
+				{
+					text: '. In a style of a poster or a short teaser.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/eulbink',
+					linkUrl: 'https://lospec.com/palette-list/eulbink',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CQj9T-fBKvs/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/lucid-oenn',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109597986300673322',
+			xUrl: 'https://twitter.com/nkoder/status/1408570346815557639',
+		},
 		// TODO: fill in
 		progress: [],
 	},
 	{
+		slug: '065-escalator',
 		title: 'Escalator',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2021-06-10'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'Minimalistic depiction of an escalator (for example in a supermarket), in 4 colors.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/that-one-tacobell-table',
+					linkUrl: 'https://lospec.com/palette-list/that-one-tacobell-table',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5125067',
+			instagramUrl: 'https://www.instagram.com/p/CP6vkkFHhaY/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/escalator',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109548621475081262',
+			xUrl: 'https://twitter.com/nkoder/status/1402769123956887552',
+		},
 		// TODO: fill in
 		progress: [],
 	},
 	{
+		slug: '056-outnumbered',
 		title: 'Outnumbered',
 		artwork: {
 			// TODO: fill in
@@ -611,6 +697,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		slug: '045-tape-nostalgia',
 		title: 'Tape: Nostalgia',
 		artwork: {
 			// TODO: fill in
@@ -646,6 +733,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		slug: '044-one-of-a-kind',
 		title: 'One of a Kind',
 		artwork: {
 			// TODO: fill in
@@ -680,6 +768,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		slug: '040-to-be-continued',
 		title: 'To Be Continued',
 		artwork: {
 			// TODO: fill in
@@ -714,6 +803,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		slug: '032-ground-cumin',
 		title: 'Ground Cumin',
 		artwork: {
 			big: 'groundcumin_x8.png',
@@ -747,6 +837,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		slug: '020-pair-of-curly-brackets',
 		title: 'Pair of Curly Brackets',
 		artwork: {
 			big: 'pairofcurlybrackets_Twitter.png',
@@ -771,6 +862,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
+		slug: '017-exercise-tileset',
 		title: 'exercise – tileset',
 		artwork: {
 			big: 'exercisetileset_20210328_Udemy_challenge_6_tiles_Twitter.png',
