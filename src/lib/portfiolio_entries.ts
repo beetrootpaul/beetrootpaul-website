@@ -42,8 +42,7 @@ export type PortfolioEntry = {
 
 export const portfolioEntries: PortfolioEntry[] = [
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '155-dart-07',
 		title: 'Dart-07',
 		artwork: {
 			big: 'dart07_mission_1_b.gif',
@@ -114,8 +113,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '148-encounter',
 		title: 'Encounter',
 		artwork: {
 			big: 'encounter_square_x8.png',
@@ -189,22 +187,35 @@ export const portfolioEntries: PortfolioEntry[] = [
 		],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '147-table-corner',
 		title: 'Table Corner',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2022-04-24'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'A simplistic drawing of table corner with use of 6 colors only.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/bauhaus',
+					linkUrl: 'https://lospec.com/palette-list/bauhaus',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CcvvZSPoAV9/',
+			xUrl: 'https://twitter.com/beetrootpaul/status/1518314071929634818',
+		},
 		// TODO: fill in
 		progress: [],
 	},
@@ -229,8 +240,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '145-no-longer-a-hero',
 		title: 'No Longer a Hero',
 		artwork: {
 			youtubeUrl: 'https://youtu.be/D7zTWePkF88',
@@ -286,222 +296,427 @@ export const portfolioEntries: PortfolioEntry[] = [
 		],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '143-void-bringer',
 		title: 'Void Bringer',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2022-02-18'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'My inspiration came from a ',
+				},
+				{
+					text: 'Loop Hero game',
+					linkUrl: 'https://loophero.com/',
+				},
+				{
+					text: '.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/bubblegum-16',
+					linkUrl: 'https://lospec.com/palette-list/bubblegum-16',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CaGQPonoWCT/',
+			xUrl: 'https://twitter.com/beetrootpaul/status/1494461076536233990',
+		},
 		// TODO: fill in
 		progress: [],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '142-sorren',
 		title: 'Sorren',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['animation', 'pixel_art', 'chiptune', 'oc'],
+		dateFinished: new Date('2022-02-09'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'For this animated piece I used a ',
+				},
+				{
+					text: 'photo from The Pose Archives',
+					linkUrl:
+						'https://twitter.com/theposearchives/status/1462541055509741569',
+				},
+				{
+					text: ' as a character pose reference.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/deadbeat-gb',
+					linkUrl: 'https://lospec.com/palette-list/deadbeat-gb',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CZwC2InocCb/',
+			xUrl: 'https://twitter.com/beetrootpaul/status/1491335341965717508',
+			youtubeUrl: 'https://youtu.be/9dIv1o3X500',
+		},
 		// TODO: fill in
 		progress: [],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '136-winter-cottage',
 		title: 'Winter Cottage',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2021-12-24'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'My goals was an izometric cozy winter piece. And I think I achieved it 🙂',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/archerer48',
+					linkUrl: 'https://lospec.com/palette-list/archerer48',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CX3RGgIoAKc/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/winter-cottage',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110728641604817064',
+			xUrl: 'https://twitter.com/beetrootpaul/status/1474337434401976324',
+		},
 		// TODO: fill in
 		progress: [],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '132-black-hole',
 		title: 'Black Hole',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2021-11-24'),
+		descriptionParagraphs: [
+			[
+				{
+					text: `A depiction of a black hole based on they way it's portraited since Interstellar movie.`,
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/slso8',
+					linkUrl: 'https://lospec.com/palette-list/slso8',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5189620',
+			instagramUrl: 'https://www.instagram.com/p/CWqw-FrI-xk/',
+			lospecUrl: 'https://www.instagram.com/p/CWqw-FrI-xk/',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110689216034906640',
+			xUrl: 'https://twitter.com/beetrootpaul/status/1463570850528038920',
+		},
 		// TODO: fill in
 		progress: [],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '131-dune',
 		title: 'Dune',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
-		progress: [],
-	},
-	{
-		// TODO: todo
-		slug: 'TODO',
-		title: 'Bright Future',
-		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'TODO',
+		type: ['pixel_art'],
+		dateFinished: new Date('2021-11-20'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'A 6-colors pixel art drawing of a dune, based on a ',
+				},
+				{
+					text: 'reference photo',
+					linkUrl:
+						'https://www.pexels.com/photo/sand-dunes-under-blue-sky-2403629/',
+				},
+				{
+					text: '.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/archerer48',
+					linkUrl: 'https://lospec.com/palette-list/archerer48',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CWiGPkuIV7F/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/dune',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110646621231421984',
+			xUrl: 'https://twitter.com/beetrootpaul/status/1462349828617289729',
 		},
 		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
 		progress: [],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
-		title: '#SeptemBIT 2021',
-		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'TODO',
-		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
-		progress: [],
-	},
-	{
-		// TODO: todo
-		slug: 'TODO',
-		title: 'Let The Adventure Begin',
-		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'TODO',
-		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
-		// TODO: fill in
-		progress: [],
-	},
-	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '103-forgotten-planet',
 		title: 'Forgotten Planet',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2021-10-09'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/slso8',
+					linkUrl: 'https://lospec.com/palette-list/slso8',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5125008',
+			instagramUrl: 'https://www.instagram.com/p/CTnoxDAICJM/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/forgotten-planet',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110067928858851883',
+			xUrl: 'https://twitter.com/nkoder/status/1436108746711777287',
+		},
 		// TODO: fill in
 		progress: [],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '126-bright-future',
+		title: 'Bright Future',
+		artwork: {
+			// TODO: fill in
+			big: 'TODO',
+			thumbnail: 'TODO',
+		},
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2021-09-29'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'My trial on depicting a dystopian, polluted future. Partially inspired by an intro sequence of a first Blade Runner movie.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/temple-ruins',
+					linkUrl: 'https://lospec.com/palette-list/temple-ruins',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5147865',
+			instagramUrl: 'https://www.instagram.com/p/CUYki-rox4F',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/bright-future',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110564413732031677',
+			xUrl: 'https://twitter.com/nkoder/status/1442995743938256896',
+		},
+		// TODO: fill in
+		progress: [],
+	},
+	{
+		slug: '120-let-the-adventure-begin',
+		title: 'Let The Adventure Begin',
+		artwork: {
+			// TODO: fill in
+			big: 'TODO',
+			thumbnail: 'TODO',
+		},
+		type: ['pixel_art', 'animation', 'oc'],
+		dateFinished: new Date('2021-09-24'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'An animated 4-colors piece based on a tileset which is supposed to look like a screen from a vide game.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/nintendo-super-gameboy',
+					linkUrl: 'https://lospec.com/palette-list/nintendo-super-gameboy',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5133010',
+			instagramUrl: 'https://www.instagram.com/p/CUQKrLNIhlm/',
+			lospecUrl:
+				'https://lospec.com/gallery/beetrootpaul/septembit-2021-evil-eye-trap-chest-treasure-boss-key',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110510806769708971',
+			xUrl: 'https://twitter.com/nkoder/status/1441812729564745736',
+		},
+		// TODO: fill in
+		progress: [],
+	},
+	{
+		slug: '097-125-septembit-2021',
+		title: '#SeptemBIT 2021',
+		artwork: {
+			// TODO: fill in
+			big: 'TODO',
+			thumbnail: 'TODO',
+		},
+		type: ['pixel_art', 'oc'],
+		dateFinished: new Date('2021-09-19'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'A series of pixel art piece drawn during ',
+				},
+				{
+					text: '#SeptemBit 2021 challenge',
+					linkUrl: 'https://twitter.com/septembit/status/1432742915550351360',
+				},
+				{
+					text: ' organized by ',
+				},
+				{
+					text: 'Saultoons',
+					linkUrl: 'https://www.youtube.com/@saultoons',
+				},
+				{
+					text: '.',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CUQKrLNIhlm/',
+			lospecUrl:
+				'https://lospec.com/gallery/beetrootpaul/septembit-2021-evil-eye-trap-chest-treasure-boss-key',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110510806769708971',
+			xUrl: 'https://twitter.com/nkoder/status/1441812729564745736',
+		},
+		// TODO: fill in
+		progress: [],
+	},
+	{
+		slug: '099-animated-emoji-same',
 		title: 'Animated Emoji ":same:"',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['animation', 'pixel_art', 'oc'],
+		dateFinished: new Date('2021-09-04'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'An animated emoji meant to be used on Discord servers. My main focus was text legibility. ',
+				},
+				{
+					text: 'You can download it from ',
+					bold: true,
+				},
+				{
+					text: 'beetrootpaul.itch.io/animated-emoji-same',
+					bold: true,
+					linkUrl: 'https://beetrootpaul.itch.io/animated-emoji-same',
+				},
+				{
+					text: ' 🎁',
+					bold: true,
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CTYKFfdICRz/',
+			itchUrl: 'https://beetrootpaul.itch.io/animated-emoji-same',
+			xUrl: 'https://twitter.com/nkoder/status/1433928472204910592',
+		},
 		// TODO: fill in
 		progress: [],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '090-study-of-a-supermarket-fridge',
 		title: 'Study of a Supermarket Fridge',
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art'],
+		dateFinished: new Date('2021-08-17'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'A pixel art drawing based on a ',
+				},
+				{
+					text: 'reference photo',
+					linkUrl:
+						'https://www.dreamstime.com/milk-yoghurt-product-glass-door-fridge-horizontal-photo-mockup-plastic-diary-bottles-vertical-freezer-supermarket-image209124609',
+				},
+				{
+					text: ' made by ',
+				},
+				{
+					text: 'whatsontheshelf',
+					linkUrl: 'https://twitter.com/whatsontheshel1',
+				},
+				{
+					text: '. This piece is full of dithering used in order to achieve more colors than the 8 available in the ',
+				},
+				{
+					text: 'DB8 palette',
+					linkUrl: 'https://lospec.com/palette-list/dawnbringers-8-color',
+				},
+				{
+					text: '.',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CSqvjaRIlFl/',
+			xUrl: 'https://twitter.com/nkoder/status/1427538453718315018',
+		},
 		// TODO: fill in
 		progress: [],
 	},
