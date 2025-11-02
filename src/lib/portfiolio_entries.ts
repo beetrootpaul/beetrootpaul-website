@@ -190,8 +190,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '147-table-corner',
 		title: 'Table Corner',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'tablecorner_x20.png',
 			thumbnail: 'tablecorner_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
@@ -319,8 +318,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '143-void-bringer',
 		title: 'Void Bringer',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'voidbringer_x10.png',
 			thumbnail: 'voidbringer_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
@@ -400,8 +398,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '136-winter-cottage',
 		title: 'Winter Cottage',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'wintercottage_x4.png',
 			thumbnail: 'wintercottage_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
@@ -435,8 +432,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '132-black-hole',
 		title: 'Black Hole',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'blackhole_x10.png',
 			thumbnail: 'blackhole_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
@@ -513,8 +509,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '103-forgotten-planet',
 		title: 'Forgotten Planet',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'forgottenplanet_x10.png',
 			thumbnail: 'forgottenplanet_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
@@ -580,8 +575,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '120-let-the-adventure-begin',
 		title: 'Let The Adventure Begin',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'lettheadventurebegin_x7.gif',
 			thumbnail: 'lettheadventurebegin_x1.gif',
 		},
 		type: ['pixel_art', 'animation', 'oc'],
@@ -617,8 +611,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '097-125-septembit-2021',
 		title: '#SeptemBIT 2021',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'septembit2021_sheet_x7.png',
 			thumbnail: 'septembit2021_sheet_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
@@ -696,8 +689,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '090-study-of-a-supermarket-fridge',
 		title: 'Study of a Supermarket Fridge',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'studyofasupermarketfridge_solo_x6.png',
 			thumbnail: 'studyofasupermarketfridge_solo_x1.png',
 		},
 		type: ['pixel_art'],
@@ -742,8 +734,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '088-kitchen-knife-256px',
 		title: 'Kitchen Knife 256px',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'kitchenknife256px_x5.png',
 			thumbnail: 'kitchenknife256px_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
@@ -776,8 +767,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '079-castlevania-remaster',
 		title: 'Castlevania Remaster',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'castlevaniaremaster_x5.png',
 			thumbnail: 'castlevaniaremaster_x1.png',
 		},
 		type: ['pixel_art'],
@@ -816,53 +806,10 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
-		slug: '073-lucid-oenn-fanart',
-		title: 'Lucid Oenn Fanart',
-		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'lucidoennfanart_x1.gif',
-		},
-		type: ['pixel_art', 'animation'],
-		dateFinished: new Date('2021-06-26'),
-		descriptionParagraphs: [
-			[
-				{
-					text: 'An animated pixel art drawing of Oenn character from yet-to-be-released ',
-				},
-				{
-					text: 'Lucid game by The Matte Black Studio',
-					linkUrl: 'https://twitter.com/_theMatteBlack',
-				},
-				{
-					text: '. In a style of a poster or a short teaser.',
-				},
-			],
-			[
-				{
-					text: 'Palette: ',
-				},
-				{
-					text: 'lospec.com/palette-list/eulbink',
-					linkUrl: 'https://lospec.com/palette-list/eulbink',
-				},
-			],
-		],
-		publications: {
-			instagramUrl: 'https://www.instagram.com/p/CQj9T-fBKvs/',
-			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/lucid-oenn',
-			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109597986300673322',
-			xUrl: 'https://twitter.com/nkoder/status/1408570346815557639',
-		},
-		// TODO: fill in
-		progress: [],
-	},
-	{
 		slug: '065-escalator',
 		title: 'Escalator',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'escalator_x10.png',
 			thumbnail: 'escalator_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
@@ -897,8 +844,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '056-outnumbered',
 		title: 'Outnumbered',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'outnumbered_x7.gif',
 			thumbnail: 'outnumbered_original_size.gif',
 		},
 		type: ['pixel_art', 'oc', 'animation'],
@@ -932,8 +878,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '045-tape-nostalgia',
 		title: 'Tape: Nostalgia',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'tapenostalgia.png',
 			thumbnail: 'tapenostalgia_x1.png',
 		},
 		type: ['pixel_art'],
@@ -968,8 +913,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '044-one-of-a-kind',
 		title: 'One of a Kind',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'oneofakind.png',
 			thumbnail: 'oneofakind_original_size.png',
 		},
 		type: ['pixel_art'],
@@ -1003,8 +947,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '040-to-be-continued',
 		title: 'To Be Continued',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'tobecontinued.png',
 			thumbnail: 'tobecontinued_x1.png',
 		},
 		type: ['pixel_art'],
