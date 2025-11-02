@@ -1,3 +1,4 @@
+import { text } from '@sveltejs/kit';
 import { DEBUG } from './debug';
 
 export type PortfolioEntry = {
@@ -582,14 +583,30 @@ export const portfolioEntries: PortfolioEntry[] = [
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art', 'oc', 'animation'],
+		dateFinished: new Date('2021-05-23'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'My first longer animation. I started with a storyboard, processed to a raw draft to check if the timing makes sense and gives a proper feel. Then, I drew a proper polished animation.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/blk-neo',
+					linkUrl: 'https://lospec.com/palette-list/blk-neo',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CPUBEDKHhNO/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/outnumbered',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109469135834677093',
+			xUrl: 'https://twitter.com/nkoder/status/1397318896739291138',
+		},
 		// TODO: fill in
 		progress: [],
 	},
@@ -600,14 +617,31 @@ export const portfolioEntries: PortfolioEntry[] = [
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art'],
+		dateFinished: new Date('2021-04-27'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'There is this type of a cassettes collage photo which you can easily find in internet. So… I decided to drew mine as well 😄',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/resurrect-64',
+					linkUrl: 'https://lospec.com/palette-list/resurrect-64',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5125072',
+			instagramUrl: 'https://www.instagram.com/p/COKM5GOIwig/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/tape-nostalgia',
+			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109353522417380991',
+			xUrl: 'https://twitter.com/nkoder/status/1386960810463973378',
+		},
 		// TODO: fill in
 		progress: [],
 	},
@@ -618,14 +652,30 @@ export const portfolioEntries: PortfolioEntry[] = [
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art'],
+		dateFinished: new Date('2021-04-25'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'A drawing of that one special LEGO piece – a brick separator.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/resurrect-64',
+					linkUrl: 'https://lospec.com/palette-list/resurrect-64',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/COFGyP6Ig83/',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/one-of-a-kind',
+			mastodonUrl: 'https://mastodon.art/web/@beetrootpaul/109344425916447792',
+			xUrl: 'https://twitter.com/nkoder/status/1386243586639892480',
+		},
 		// TODO: fill in
 		progress: [],
 	},
@@ -636,14 +686,30 @@ export const portfolioEntries: PortfolioEntry[] = [
 			big: 'TODO',
 			thumbnail: 'TODO',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['pixel_art'],
+		dateFinished: new Date('2021-04-21'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'My own favorite piece so far. Minimalistic. In a mood of a lunch break taken in a middle of a hot summer day. 4 colors only.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/oil-6',
+					linkUrl: 'https://lospec.com/palette-list/oil-6',
+				},
+			],
+		],
+		publications: {
+			displateUrl: 'https://displate.com/displate/5125094',
+			lospecUrl: 'https://lospec.com/gallery/beetrootpaul/to-be-continued',
+			mastodonUrl: 'https://mastodon.art/web/@beetrootpaul/109320338976771133',
+			xUrl: 'https://twitter.com/nkoder/status/1384794033017417738',
+		},
 		// TODO: fill in
 		progress: [],
 	},
