@@ -608,7 +608,9 @@
 			max-width: 100%;
 			max-height: 100%;
 			object-fit: contain;
-			image-rendering: pixelated;
+			// We intentionally don't set it to `pixelated` as those tiny images look
+			// even worse that way.
+			image-rendering: auto;
 		}
 	}
 
@@ -619,5 +621,9 @@
 	/* fslightbos: Hide the fullscreen button. */
 	:global(.fslightbox-toolbar > button[title='Enter fullscreen']) {
 		display: none !important;
+	}
+	/* fslightbos: Crisp pixel art images. */
+	:global(img.fslightbox-source) {
+		image-rendering: pixelated;
 	}
 </style>
