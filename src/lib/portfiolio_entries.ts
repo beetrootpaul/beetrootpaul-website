@@ -19,6 +19,7 @@ export type PortfolioEntry = {
 		  };
 	progress: Array<{
 		big: string;
+		alt?: string;
 	}>;
 	type: Array<'animation' | 'chiptune' | 'game' | 'oc' | 'pixel_art'>;
 	dateFinished: Date;
@@ -109,6 +110,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [
 			{
 				big: 'dart07_mockup_02_vertical_export_x4.gif',
+				alt: 'A mockup for 3 stages.',
 			},
 		],
 	},

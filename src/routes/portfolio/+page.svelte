@@ -200,13 +200,15 @@
 					<div class="progress">
 						<div class="progress-heading">behind the scenes</div>
 						<div class="progress-items">
-							<!-- TODO: Define "alt" for each progress item. -->
 							{#each entry.progress as item}
 								<a
 									data-fslightbox={`artwork-${artworkIndex}-progress`}
 									href={asset(`${assetsBase}${item.big}`)}
 								>
-									<img src={asset(`${assetsBase}${item.big}`)} alt="" />
+									<img
+										src={asset(`${assetsBase}${item.big}`)}
+										alt={item.alt ?? ''}
+									/>
 								</a>
 							{/each}
 						</div>
