@@ -19,11 +19,10 @@
 	} from '$lib/portfiolio_entries';
 
 	const assetsBase = '/portfolio/';
-	const instagramLogo = '/brands/instagram-brands-inverted_c44169.svg';
+	const instagramLogo = '/brands/instagram-brands_c44169.svg';
 	const itchLogo = '/brands/itch-io-brands_c44169.svg';
 	const mastodonLogo = '/brands/mastodon-brands_c44169.svg';
-	// TODO: Use X logo instead
-	const twitterLogo = '/brands/twitter-brands_c44169.svg';
+	const xLogo = '/brands/x-brands_c44169.svg';
 	const youtubeLogo = '/brands/youtube-brands_c44169.svg';
 
 	const dateFinishedFormatter = new Intl.DateTimeFormat('en-US', {
@@ -145,12 +144,7 @@
 				youtubeLogo,
 				'YouTube',
 			)}
-			{@render publicationEl(
-				entry.publications.xUrl,
-				// TODO: Use X logo instead
-				twitterLogo,
-				'X',
-			)}
+			{@render publicationEl(entry.publications.xUrl, xLogo, 'X')}
 			{@render publicationEl(
 				entry.publications.instagramUrl,
 				instagramLogo,
