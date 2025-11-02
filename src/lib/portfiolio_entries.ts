@@ -215,8 +215,14 @@ export const portfolioEntries: PortfolioEntry[] = [
 			instagramUrl: 'https://www.instagram.com/p/CcvvZSPoAV9/',
 			xUrl: 'https://twitter.com/beetrootpaul/status/1518314071929634818',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'tablecorner_progress_03.png',
+			},
+			{
+				big: 'tablecorner_progress_04.png',
+			},
+		],
 	},
 	{
 		slug: '146-floating-windmill-2022',
@@ -255,8 +261,20 @@ export const portfolioEntries: PortfolioEntry[] = [
 			xUrl: 'https://twitter.com/beetrootpaul/status/1513435753518452739',
 			youtubeUrl: 'https://youtu.be/ixob2Y0nDuE',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'floatingwindmill2022_pixel_art_progress_02.gif',
+			},
+			{
+				big: 'floatingwindmill2022_pixel_art_progress_05.gif',
+			},
+			{
+				big: 'floatingwindmill2022_pixel_art_progress_07.gif',
+			},
+			{
+				big: 'floatingwindmill2022_pixel_art_progress_10.gif',
+			},
+		],
 	},
 	{
 		slug: '145-no-longer-a-hero',
@@ -350,8 +368,14 @@ export const portfolioEntries: PortfolioEntry[] = [
 			instagramUrl: 'https://www.instagram.com/p/CaGQPonoWCT/',
 			xUrl: 'https://twitter.com/beetrootpaul/status/1494461076536233990',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'voidbringer_progress_02.png',
+			},
+			{
+				big: 'voidbringer_progress_03.png',
+			},
+		],
 	},
 	{
 		slug: '142-sorren',
@@ -391,8 +415,17 @@ export const portfolioEntries: PortfolioEntry[] = [
 			xUrl: 'https://twitter.com/beetrootpaul/status/1491335341965717508',
 			youtubeUrl: 'https://youtu.be/9dIv1o3X500',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'sorren_progress_01.png',
+			},
+			{
+				big: 'sorren_progress_02.png',
+			},
+			{
+				big: 'sorren_progress_04.png',
+			},
+		],
 	},
 	{
 		slug: '136-winter-cottage',
@@ -425,8 +458,23 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110728641604817064',
 			xUrl: 'https://twitter.com/beetrootpaul/status/1474337434401976324',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'wintercottage_progress_01.png',
+			},
+			{
+				big: 'wintercottage_progress_02_guides.png',
+			},
+			{
+				big: 'wintercottage_progress_03_aap64.png',
+			},
+			{
+				big: 'wintercottage_progress_16.png',
+			},
+			{
+				big: 'wintercottage_progress_20.png',
+			},
+		],
 	},
 	{
 		slug: '132-black-hole',
