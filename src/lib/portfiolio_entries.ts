@@ -192,7 +192,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'tablecorner_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2022-04-24'),
@@ -220,22 +220,42 @@ export const portfolioEntries: PortfolioEntry[] = [
 		progress: [],
 	},
 	{
-		// TODO: todo
-		slug: 'TODO',
+		slug: '146-floating-windmill-2022',
 		title: 'Floating Windmill 2022',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'TODO',
+			youtubeUrl: 'https://youtu.be/ixob2Y0nDuE',
+			thumbnail: 'floatingwindmill2022_pixel_art_x1.gif',
 		},
-		// TODO: fill in
-		type: [],
-		// TODO: fill in
-		dateFinished: new Date('1990-01-01'),
-		// TODO: fill in
-		descriptionParagraphs: [],
-		// TODO: fill in
-		publications: {},
+		type: ['animation', 'pixel_art', 'oc', 'chiptune'],
+		dateFinished: new Date('2022-04-10'),
+		descriptionParagraphs: [
+			[
+				{
+					text: 'A bigger and more detailed version of a ',
+				},
+				{
+					text: 'pixel art animation I drew in 2021',
+					linkUrl: 'https://twitter.com/nkoder/status/1377062234367614977',
+				},
+				{
+					text: '. This time with an accompanying short chiptune loop.',
+				},
+			],
+			[
+				{
+					text: 'Palette: ',
+				},
+				{
+					text: 'lospec.com/palette-list/mupix9',
+					linkUrl: 'https://lospec.com/palette-list/mupix9',
+				},
+			],
+		],
+		publications: {
+			instagramUrl: 'https://www.instagram.com/p/CcNF_3-oIAr/',
+			xUrl: 'https://twitter.com/beetrootpaul/status/1513435753518452739',
+			youtubeUrl: 'https://youtu.be/ixob2Y0nDuE',
+		},
 		// TODO: fill in
 		progress: [],
 	},
@@ -301,7 +321,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'voidbringer_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2022-02-18'),
@@ -339,9 +359,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '142-sorren',
 		title: 'Sorren',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'TODO',
+			youtubeUrl: 'https://youtu.be/9dIv1o3X500',
+			thumbnail: 'sorren_x1.gif',
 		},
 		type: ['animation', 'pixel_art', 'chiptune', 'oc'],
 		dateFinished: new Date('2022-02-09'),
@@ -383,7 +402,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'wintercottage_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2021-12-24'),
@@ -418,7 +437,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'blackhole_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2021-11-24'),
@@ -452,9 +471,8 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '131-dune',
 		title: 'Dune',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
-			thumbnail: 'TODO',
+			big: 'dune_square_x5.png',
+			thumbnail: 'dune_square_x5.png',
 		},
 		type: ['pixel_art'],
 		dateFinished: new Date('2021-11-20'),
@@ -497,7 +515,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'forgottenplanet_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2021-10-09'),
@@ -528,7 +546,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'brightfuture_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2021-09-29'),
@@ -564,7 +582,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'lettheadventurebegin_x1.gif',
 		},
 		type: ['pixel_art', 'animation', 'oc'],
 		dateFinished: new Date('2021-09-24'),
@@ -601,7 +619,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'septembit2021_sheet_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2021-09-19'),
@@ -642,7 +660,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'animatedemojisame_for_social_media_x1.gif',
 		},
 		type: ['animation', 'pixel_art', 'oc'],
 		dateFinished: new Date('2021-09-04'),
@@ -680,7 +698,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'studyofasupermarketfridge_solo_x1.png',
 		},
 		type: ['pixel_art'],
 		dateFinished: new Date('2021-08-17'),
@@ -726,11 +744,10 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'kitchenknife256px_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2021-08-10'),
-		// TODO: fill in
 		descriptionParagraphs: [
 			[
 				{
@@ -761,7 +778,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'castlevaniaremaster_x1.png',
 		},
 		type: ['pixel_art'],
 		dateFinished: new Date('2021-07-18'),
@@ -804,7 +821,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'lucidoennfanart_x1.gif',
 		},
 		type: ['pixel_art', 'animation'],
 		dateFinished: new Date('2021-06-26'),
@@ -846,7 +863,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'escalator_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
 		dateFinished: new Date('2021-06-10'),
@@ -882,7 +899,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'outnumbered_original_size.gif',
 		},
 		type: ['pixel_art', 'oc', 'animation'],
 		dateFinished: new Date('2021-05-23'),
@@ -917,7 +934,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'tapenostalgia_x1.png',
 		},
 		type: ['pixel_art'],
 		dateFinished: new Date('2021-04-27'),
@@ -953,7 +970,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'oneofakind_original_size.png',
 		},
 		type: ['pixel_art'],
 		dateFinished: new Date('2021-04-25'),
@@ -988,7 +1005,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		artwork: {
 			// TODO: fill in
 			big: 'TODO',
-			thumbnail: 'TODO',
+			thumbnail: 'tobecontinued_x1.png',
 		},
 		type: ['pixel_art'],
 		dateFinished: new Date('2021-04-21'),
