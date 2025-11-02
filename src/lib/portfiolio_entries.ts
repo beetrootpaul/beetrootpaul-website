@@ -595,8 +595,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '126-bright-future',
 		title: 'Bright Future',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'brightfuture_x8.png',
 			thumbnail: 'brightfuture_x1.png',
 		},
 		type: ['pixel_art', 'oc'],
@@ -711,8 +710,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '099-animated-emoji-same',
 		title: 'Animated Emoji ":same:"',
 		artwork: {
-			// TODO: fill in
-			big: 'TODO',
+			big: 'animatedemojisame_for_social_media_x10.gif',
 			thumbnail: 'animatedemojisame_for_social_media_x1.gif',
 		},
 		type: ['animation', 'pixel_art', 'oc'],
