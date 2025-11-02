@@ -508,7 +508,6 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110689216034906640',
 			xUrl: 'https://twitter.com/beetrootpaul/status/1463570850528038920',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
@@ -550,8 +549,14 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110646621231421984',
 			xUrl: 'https://twitter.com/beetrootpaul/status/1462349828617289729',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'dune_progress_01_wheatfield_palette.png',
+			},
+			{
+				big: 'dune_progress_03.png',
+			},
+		],
 	},
 	{
 		slug: '103-forgotten-planet',
@@ -580,8 +585,11 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110067928858851883',
 			xUrl: 'https://twitter.com/nkoder/status/1436108746711777287',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'forgottenplanet_progress_01.png',
+			},
+		],
 	},
 	{
 		slug: '126-bright-future',
@@ -616,7 +624,6 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110564413732031677',
 			xUrl: 'https://twitter.com/nkoder/status/1442995743938256896',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
@@ -652,8 +659,14 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110510806769708971',
 			xUrl: 'https://twitter.com/nkoder/status/1441812729564745736',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'lettheadventurebegin_progress_01.png',
+			},
+			{
+				big: 'lettheadventurebegin_progress_04.png',
+			},
+		],
 	},
 	{
 		slug: '097-125-septembit-2021',
@@ -692,7 +705,6 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/110510806769708971',
 			xUrl: 'https://twitter.com/nkoder/status/1441812729564745736',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
@@ -730,7 +742,6 @@ export const portfolioEntries: PortfolioEntry[] = [
 			itchUrl: 'https://beetrootpaul.itch.io/animated-emoji-same',
 			xUrl: 'https://twitter.com/nkoder/status/1433928472204910592',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
@@ -775,8 +786,14 @@ export const portfolioEntries: PortfolioEntry[] = [
 			instagramUrl: 'https://www.instagram.com/p/CSqvjaRIlFl/',
 			xUrl: 'https://twitter.com/nkoder/status/1427538453718315018',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'studyofasupermarketfridge_progress_01.png',
+			},
+			{
+				big: 'studyofasupermarketfridge_progress_04b.png',
+			},
+		],
 	},
 	{
 		slug: '088-kitchen-knife-256px',
@@ -808,7 +825,6 @@ export const portfolioEntries: PortfolioEntry[] = [
 			instagramUrl: 'https://www.instagram.com/p/CSclv1mIeSs/',
 			xUrl: 'https://twitter.com/nkoder/status/1425545951071162368',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
@@ -850,7 +866,6 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109693373908423426',
 			xUrl: 'https://twitter.com/nkoder/status/1416728880359092227',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
@@ -885,7 +900,6 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109548621475081262',
 			xUrl: 'https://twitter.com/nkoder/status/1402769123956887552',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
@@ -919,8 +933,23 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109469135834677093',
 			xUrl: 'https://twitter.com/nkoder/status/1397318896739291138',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'outnumbered_behind_the_scenes_00_storyboard.jpg',
+			},
+			{
+				big: 'outnumbered_behind_the_scenes_04.gif',
+			},
+			{
+				big: 'outnumbered_behind_the_scenes_09.png',
+			},
+			{
+				big: 'outnumbered_behind_the_scenes_12.png',
+			},
+			{
+				big: 'outnumbered_behind_the_scenes_17.png',
+			},
+		],
 	},
 	{
 		slug: '045-tape-nostalgia',
@@ -954,7 +983,6 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/@beetrootpaul/109353522417380991',
 			xUrl: 'https://twitter.com/nkoder/status/1386960810463973378',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
@@ -988,7 +1016,6 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/web/@beetrootpaul/109344425916447792',
 			xUrl: 'https://twitter.com/nkoder/status/1386243586639892480',
 		},
-		// TODO: fill in
 		progress: [],
 	},
 	{
@@ -1022,8 +1049,11 @@ export const portfolioEntries: PortfolioEntry[] = [
 			mastodonUrl: 'https://mastodon.art/web/@beetrootpaul/109320338976771133',
 			xUrl: 'https://twitter.com/nkoder/status/1384794033017417738',
 		},
-		// TODO: fill in
-		progress: [],
+		progress: [
+			{
+				big: 'tobecontinued_behind_the_scenes_early_version.png',
+			},
+		],
 	},
 	{
 		slug: '032-ground-cumin',
