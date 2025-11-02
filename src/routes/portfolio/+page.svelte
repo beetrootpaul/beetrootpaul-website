@@ -586,16 +586,16 @@
 
 		a {
 			max-width: 4rem;
-			max-height: 4rem;
+			height: 4rem;
 
 			@include bkp1 {
 				max-width: 3rem;
-				max-height: 3rem;
+				height: 3rem;
 			}
 
 			@include bkp3 {
 				max-width: 2.5rem;
-				max-height: 2.5rem;
+				height: 2.5rem;
 			}
 
 			&:hover {
@@ -605,7 +605,8 @@
 
 		img {
 			display: block;
-			width: 100%;
+			max-width: 100%;
+			max-height: 100%;
 			object-fit: contain;
 			image-rendering: pixelated;
 		}
