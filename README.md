@@ -13,6 +13,7 @@ npm run dev -- --open
 ## Static build
 
 ```shell
+nvm use
 npm run build
 npm run preview -- --open
 ```
