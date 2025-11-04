@@ -1,7 +1,11 @@
 import { expect, test } from 'vitest';
-import { page } from 'vitest/browser';
+import { render } from 'vitest-browser-svelte';
+import HomePage from './+page.svelte';
+import Layout from './+layout.svelte';
 
-test('button looks correct', async () => {
-	const button = page.getByRole('button');
-	await expect(button).toMatchScreenshot('primary-button');
+test('Home Page renders correctly', async () => {
+	const screen = render(Layout, {
+		children: HomePage,
+	});
+	await expect(screen).toMatchScreenshot('home_page');
 });

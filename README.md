@@ -18,6 +18,13 @@ npm run build
 npm run preview -- --open
 ```
 
+## Tests
+
+```shell
+nvm use
+npm test
+```
+
 ## Helpful links
 
 - Prettier options: https://prettier.io/docs/options
