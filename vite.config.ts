@@ -11,7 +11,12 @@ export default defineConfig({
 			}
 		: undefined,
 	test: {
+		include: [
+			'**/*.{test,spec}.?(c|m)[jt]s?(x)',
+			'!**/*.browser.{test,spec}.?(c|m)[jt]s?(x)',
+		],
 		browser: {
+			include: ['src/**/*.browser.{test,spec}.?(c|m)[jt]s?(x)'],
 			provider: preview(),
 			instances: [{ browser: 'chromium' }],
 		},
