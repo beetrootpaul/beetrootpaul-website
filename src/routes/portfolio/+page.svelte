@@ -76,7 +76,11 @@
 			data-fslightbox="artwork"
 			href={entry.artwork.youtubeUrl}
 		>
-			<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
+			<img
+				src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
+				alt=""
+				data-testid="artwork-thumbnail"
+			/>
 			<div class="click-to-play-overlay">
 				<p>click to play<br />with sound</p>
 			</div>
@@ -87,7 +91,11 @@
 			data-fslightbox="artwork"
 			href={asset(`${assetsBase}${entry.artwork.big}`)}
 		>
-			<img src={asset(`${assetsBase}${entry.artwork.thumbnail}`)} alt="" />
+			<img
+				src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
+				alt=""
+				data-testid="artwork-thumbnail"
+			/>
 		</a>
 	{/if}
 {/snippet}
@@ -202,6 +210,7 @@
 									<img
 										src={asset(`${assetsBase}${item.big}`)}
 										alt={item.alt ?? ''}
+										data-testid="progress-thumbnail"
 									/>
 								</a>
 							{/each}

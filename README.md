@@ -25,6 +25,12 @@ nvm use
 npm test
 ```
 
+or to update the reference screenshots:
+
+```shell
+npm test -- --update
+```
+
 ## Helpful links
 
 - Prettier options: https://prettier.io/docs/options

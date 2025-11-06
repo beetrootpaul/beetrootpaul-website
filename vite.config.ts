@@ -1,5 +1,5 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { preview } from '@vitest/browser-preview';
+import { playwright } from '@vitest/browser-playwright';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -9,7 +9,7 @@ export default defineConfig({
 	test: {
 		browser: {
 			enabled: true,
-			provider: preview(),
+			provider: playwright(),
 			instances: [{ browser: 'chromium' }],
 			viewport: { width: 1280, height: 768 },
 		},

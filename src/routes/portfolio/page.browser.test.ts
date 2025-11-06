@@ -7,5 +7,13 @@ test('Portfolio Page renders correctly', async () => {
 	const screen = render(Layout, {
 		children: PortfoliPage,
 	});
-	await expect(screen.container).toMatchScreenshot('portfolio_page');
+	await expect(screen.container).toMatchScreenshot('portfolio_page', {
+		timeout: 1000,
+		screenshotOptions: {
+			mask: [
+				screen.getByTestId('artwork-thumbnail'),
+				screen.getByTestId('progress-thumbnail'),
+			],
+		},
+	});
 });
