@@ -1,11 +1,11 @@
 import { expect, test } from 'vitest';
 import { render } from 'vitest-browser-svelte';
-import Portfolioage from './+page.svelte';
+import PortfoliPage from './+page.svelte';
 import Layout from '../+layout.svelte';
 
 test('Portfolio Page renders correctly', async () => {
 	const screen = render(Layout, {
-		children: Portfolioage,
+		children: PortfoliPage,
 	});
-	await expect(screen).toMatchScreenshot('portfolio_page');
+	await expect(screen.container).toMatchScreenshot('portfolio_page');
 });

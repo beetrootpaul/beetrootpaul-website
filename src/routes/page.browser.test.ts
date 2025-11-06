@@ -7,5 +7,5 @@ test('Home Page renders correctly', async () => {
 	const screen = render(Layout, {
 		children: HomePage,
 	});
-	await expect(screen).toMatchScreenshot('home_page');
+	await expect(screen.container).toMatchScreenshot('home_page');
 });
