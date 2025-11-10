@@ -9,7 +9,7 @@ describe('Portfolio Page renders correctly on', async () => {
 		test(name, async () => {
 			const screen = page.render(Layout, { children: PortfolioPage });
 			await page.viewport(viewport[0], viewport[1]);
-			await expect(screen.container).toMatchScreenshot(`home_page_${id}`, {
+			await expect(screen.container).toMatchScreenshot(`portfolio_page_${id}`, {
 				timeout: 1000,
 				screenshotOptions: {
 					mask: [
