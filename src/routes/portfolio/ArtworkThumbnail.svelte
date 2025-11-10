@@ -3,7 +3,7 @@
 	import type { PortfolioEntry } from '$lib/portfiolio_entries';
 	import { assetsBase } from './portfolio';
 
-	let { entry }: { entry: PortfolioEntry } = $props();
+	const { entry }: { entry: PortfolioEntry } = $props();
 </script>
 
 {#if 'youtubeUrl' in entry.artwork}
