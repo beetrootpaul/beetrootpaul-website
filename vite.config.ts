@@ -1,6 +1,17 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
+import { playwright } from '@vitest/browser-playwright';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	plugins: [sveltekit()],
+	// Tell Vitest to use the `browser` entry points in `package.json` files, even though it's running in Node
+	// resolve: process.env.VITEST ? { conditions: ['browser'] } : undefined,
+	test: {
+		setupFiles: ['vitest-browser-svelte'],
+		browser: {
+			enabled: true,
+			provider: playwright(),
+			instances: [{ browser: 'chromium' }],
+		},
+	},
 });

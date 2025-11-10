@@ -13,8 +13,22 @@ npm run dev -- --open
 ## Static build
 
 ```shell
+nvm use
 npm run build
 npm run preview -- --open
+```
+
+## Tests
+
+```shell
+nvm use
+npm test
+```
+
+or to update the reference screenshots:
+
+```shell
+npm test -- --update
 ```
 
 ## Helpful links

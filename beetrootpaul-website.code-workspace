@@ -3,8 +3,9 @@
 		"recommendations": [
 			"esbenp.prettier-vscode",
 			"svelte.svelte-vscode",
+			"vitest.explorer",
 			"vmsynkov.colonize",
-			"wayou.vscode-todo-highlight",
+			"wayou.vscode-todo-highlight"
 		],
 	},
 	"folders": [
@@ -13,7 +14,9 @@
 		},
 	],
 	"settings": {
-		"editor.rulers": [80],
+		"editor.rulers": [
+			80
+		],
 		"files.exclude": {
 			"**/.DS_Store": true,
 			"**/.git/": true,
