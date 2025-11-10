@@ -1,19 +1,14 @@
 <script lang="ts">
-	import { asset } from '$app/paths';
 	import type { PortfolioEntry } from '$lib/portfiolio_entries';
+	import ArtworkDescription from './ArtworkDescription.svelte';
 	import ArtworkProgress from './ArtworkProgress.svelte';
+	import ArtworkPublications from './ArtworkPublications.svelte';
 	import ArtworkThumbnail from './ArtworkThumbnail.svelte';
 
 	const {
 		entry,
 		artworkIndex,
 	}: { entry: PortfolioEntry; artworkIndex: number } = $props();
-
-	const instagramLogo = '/brands/instagram-brands_c44169.svg';
-	const itchLogo = '/brands/itch-io-brands_c44169.svg';
-	const mastodonLogo = '/brands/mastodon-brands_c44169.svg';
-	const xLogo = '/brands/x-brands_c44169.svg';
-	const youtubeLogo = '/brands/youtube-brands_c44169.svg';
 
 	const dateFinishedFormatter = new Intl.DateTimeFormat('en-US', {
 		month: 'long',
@@ -47,59 +42,6 @@
 	</div>
 {/snippet}
 
-{#snippet publicationEl(
-	url: string | undefined,
-	logo: string,
-	nameForAlt: string,
-)}
-	{#if url}
-		<a href={url} target="_blank">
-			<img src={asset(logo)} alt="Link to the publication on {nameForAlt}" />
-		</a>
-	{/if}
-{/snippet}
-
-{#snippet descriptionAndPublications(entry: PortfolioEntry)}
-	<div class="details-rest-description-and-publications">
-		<div class="description">
-			{#each entry.descriptionParagraphs as paragraph}
-				<p>
-					{#each paragraph as { text, bold, linkUrl }}
-						{#if linkUrl && bold}
-							<strong><a href={linkUrl}>{text}</a></strong>
-						{:else if linkUrl}
-							<a href={linkUrl}>{text}</a>
-						{:else if bold}
-							<strong>{text}</strong>
-						{:else}
-							{text}
-						{/if}
-					{/each}
-				</p>
-			{/each}
-		</div>
-		<div class="publications">
-			{@render publicationEl(entry.publications.itchUrl, itchLogo, 'itch.io')}
-			{@render publicationEl(
-				entry.publications.youtubeUrl,
-				youtubeLogo,
-				'YouTube',
-			)}
-			{@render publicationEl(entry.publications.xUrl, xLogo, 'X')}
-			{@render publicationEl(
-				entry.publications.instagramUrl,
-				instagramLogo,
-				'Instagram',
-			)}
-			{@render publicationEl(
-				entry.publications.mastodonUrl,
-				mastodonLogo,
-				'Mastodon',
-			)}
-		</div>
-	</div>
-{/snippet}
-
 <section class="entry-container" role="listitem">
 	<div class="artwork-and-mobile-finished-and-types">
 		<ArtworkThumbnail {entry} />
@@ -110,7 +52,12 @@
 			<h1 class="details-title">{entry.title}</h1>
 			<div class="details-rest">
 				{@render dateFinishedAndTypes(entry, { mobile: false })}
-				{@render descriptionAndPublications(entry)}
+				<div style:flex={1}>
+					<ArtworkDescription
+						descriptionParagraphs={entry.descriptionParagraphs}
+					/>
+					<ArtworkPublications publications={entry.publications} />
+				</div>
 			</div>
 		</div>
 		<ArtworkProgress progress={entry.progress} {artworkIndex} />
@@ -254,64 +201,6 @@
 		@include bkp3 {
 			line-height: 16px;
 			font-size: 0.6rem;
-		}
-	}
-
-	.details-rest-description-and-publications {
-		flex: 1;
-	}
-
-	.description {
-		font-size: 1rem;
-
-		@include bkp1 {
-			font-size: 0.8rem;
-		}
-
-		@include bkp3 {
-			font-size: 0.7rem;
-		}
-
-		/* Prevent margins from collapsing with sibling elements. */
-		&::before,
-		&::after {
-			display: table;
-			content: ' ';
-		}
-
-		p {
-			margin: 0 0 10px;
-		}
-
-		a {
-			color: var(--dark-grey);
-			text-decoration: underline;
-		}
-	}
-
-	.publications {
-		display: flex;
-		margin-top: 0.6rem;
-		grid-column-gap: 0.4rem;
-		grid-row-gap: 0.4rem;
-
-		img {
-			width: 1.6rem;
-			height: 1.6rem;
-
-			@include bkp1 {
-				width: 1.4rem;
-				height: 1.4rem;
-			}
-
-			@include bkp3() {
-				width: 1.3rem;
-				height: 1.3rem;
-			}
-
-			&:hover {
-				transform: scale(1.1);
-			}
 		}
 	}
 </style>
