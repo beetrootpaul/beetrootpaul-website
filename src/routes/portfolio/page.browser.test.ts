@@ -1,19 +1,23 @@
-import { expect, test } from 'vitest';
-import { render } from 'vitest-browser-svelte';
-import PortfoliPage from './+page.svelte';
+import { expect, describe, test } from 'vitest';
+import { page } from 'vitest/browser';
+import PortfolioPage from './+page.svelte';
 import Layout from '../+layout.svelte';
+import { testViewports } from '$lib/test_viewports';
 
-test('Portfolio Page renders correctly', async () => {
-	const screen = render(Layout, {
-		children: PortfoliPage,
-	});
-	await expect(screen.container).toMatchScreenshot('portfolio_page', {
-		timeout: 1000,
-		screenshotOptions: {
-			mask: [
-				screen.getByTestId('artwork-thumbnail'),
-				screen.getByTestId('progress-thumbnail'),
-			],
-		},
+describe('Portfolio Page renders correctly on', async () => {
+	testViewports.forEach(({ name, viewport, id }) => {
+		test(name, async () => {
+			const screen = page.render(Layout, { children: PortfolioPage });
+			await page.viewport(viewport[0], viewport[1]);
+			await expect(screen.container).toMatchScreenshot(`home_page_${id}`, {
+				timeout: 1000,
+				screenshotOptions: {
+					mask: [
+						screen.getByTestId('artwork-thumbnail'),
+						screen.getByTestId('progress-thumbnail'),
+					],
+				},
+			});
+		});
 	});
 });
