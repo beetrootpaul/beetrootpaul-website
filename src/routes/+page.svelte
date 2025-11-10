@@ -61,7 +61,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.card {
 		position: relative;
 		display: flex;
@@ -158,7 +158,7 @@
 		}
 	}
 
-	@media screen and (max-width: 479px) {
+	@include bkp3() {
 		.card {
 			width: 95%;
 			margin: 1rem auto;

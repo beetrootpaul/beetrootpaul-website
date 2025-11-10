@@ -1,4 +1,4 @@
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { sveltePreprocess } from 'svelte-preprocess';
 import adapterStatic from '@sveltejs/adapter-static';
 
 const githubPagesDir = 'docs';
@@ -7,7 +7,11 @@ const githubPagesDir = 'docs';
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
-	preprocess: vitePreprocess(),
+	preprocess: sveltePreprocess({
+		scss: {
+			prependData: `@use 'src/lib/_mixins.scss' as *;`,
+		},
+	}),
 
 	kit: {
 		adapter: adapterStatic({

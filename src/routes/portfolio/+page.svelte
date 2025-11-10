@@ -17,8 +17,9 @@
 		portfolioEntries,
 		type PortfolioEntry,
 	} from '$lib/portfiolio_entries';
+	import ArtworkThumbnail from './ArtworkThumbnail.svelte';
+	import { assetsBase } from './portfolio';
 
-	const assetsBase = '/portfolio/';
 	const instagramLogo = '/brands/instagram-brands_c44169.svg';
 	const itchLogo = '/brands/itch-io-brands_c44169.svg';
 	const mastodonLogo = '/brands/mastodon-brands_c44169.svg';
@@ -68,37 +69,6 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="theme-color" content="#fca790" />
 </svelte:head>
-
-{#snippet artworkThumbnail(entry: PortfolioEntry)}
-	{#if 'youtubeUrl' in entry.artwork}
-		<a
-			class="artwork-thumbnail-container"
-			data-fslightbox="artwork"
-			href={entry.artwork.youtubeUrl}
-		>
-			<img
-				src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
-				alt=""
-				data-testid="artwork-thumbnail"
-			/>
-			<div class="click-to-play-overlay">
-				<p>click to play<br />with sound</p>
-			</div>
-		</a>
-	{:else}
-		<a
-			class="artwork-thumbnail-container"
-			data-fslightbox="artwork"
-			href={asset(`${assetsBase}${entry.artwork.big}`)}
-		>
-			<img
-				src={asset(`${assetsBase}${entry.artwork.thumbnail}`)}
-				alt=""
-				data-testid="artwork-thumbnail"
-			/>
-		</a>
-	{/if}
-{/snippet}
 
 {#snippet dataFinishedAndTypes(
 	entry: PortfolioEntry,
@@ -187,7 +157,7 @@
 	{#each portfolioEntries.filter((entry) => entry.artwork.thumbnail !== 'TODO') as entry, artworkIndex}
 		<section class="entry-container" role="listitem">
 			<div class="artwork-and-mobile-finished-and-types">
-				{@render artworkThumbnail(entry)}
+				<ArtworkThumbnail {entry} />
 				{@render dataFinishedAndTypes(entry, { mobile: true })}
 			</div>
 			<div class="artwork-info">
@@ -223,25 +193,6 @@
 </main>
 
 <style lang="scss">
-	// Helper for defining styles for a screen width of a portrait tablet and below.
-	@mixin bkp1 {
-		@media screen and (max-width: 991px) {
-			@content;
-		}
-	}
-	// Helper for defining styles for a screen width of a landscape mobile and below.
-	@mixin bkp2 {
-		@media screen and (max-width: 767px) {
-			@content;
-		}
-	}
-	// Helper for defining styles for a screen width of a portrait mobile and below.
-	@mixin bkp3 {
-		@media screen and (max-width: 479px) {
-			@content;
-		}
-	}
-
 	:global(html) {
 		height: 100%;
 	}
@@ -359,66 +310,6 @@
 
 		@include bkp3 {
 			gap: 0.5rem;
-		}
-	}
-
-	.artwork-thumbnail-container {
-		position: relative;
-		box-shadow: 0 0 11px 7px #0003;
-		border-radius: 0.25rem;
-		width: 21rem;
-		height: fit-content;
-		overflow: hidden;
-
-		@include bkp1 {
-			width: 16rem;
-		}
-
-		@include bkp2() {
-			width: 15rem;
-		}
-
-		@include bkp3() {
-			width: 8rem;
-		}
-
-		&:hover {
-			transform: scale(1.05);
-		}
-
-		img {
-			display: block;
-			width: 100%;
-			object-fit: contain;
-			image-rendering: pixelated;
-		}
-	}
-
-	.click-to-play-overlay {
-		position: absolute;
-		inset: 0% auto auto 0%;
-		display: flex;
-		width: 100%;
-		height: 100%;
-		justify-content: center;
-		place-items: center;
-
-		p {
-			border-radius: 0.4rem;
-			background-color: color-mix(in srgb, var(--dark-grey), transparent 32%);
-			padding: 0.2rem 0.6rem 0.3rem;
-			color: var(--white);
-			font-size: 1rem;
-			text-align: center;
-			text-shadow: -1px 1px 1px #183042;
-
-			@include bkp1 {
-				font-size: 0.9rem;
-			}
-
-			@include bkp2() {
-				font-size: 0.8rem;
-			}
 		}
 	}
 
