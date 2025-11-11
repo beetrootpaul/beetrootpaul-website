@@ -5,8 +5,8 @@
 <svelte:head>
 	<link rel="shortcut icon" href="favicon.png" />
 	<link rel="shortcut icon" type="image/x-icon" href="logo_640x640.png" />
+	<link rel="apple-touch-icon" href="logo_640x640.png" />
 
-	<!-- The snippet below was copied from https://fonts.google.com/ -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
