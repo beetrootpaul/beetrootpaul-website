@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PortfolioEntry } from '$lib/portfiolio_entries';
+	import ArtworkDateFinishedAndTypes from './ArtworkDateFinishedAndTypes.svelte';
 	import ArtworkDescription from './ArtworkDescription.svelte';
 	import ArtworkProgress from './ArtworkProgress.svelte';
 	import ArtworkPublications from './ArtworkPublications.svelte';
@@ -9,49 +10,18 @@
 		entry,
 		artworkIndex,
 	}: { entry: PortfolioEntry; artworkIndex: number } = $props();
-
-	const dateFinishedFormatter = new Intl.DateTimeFormat('en-US', {
-		month: 'long',
-		year: 'numeric',
-	});
 </script>
-
-{#snippet typeEl(
-	entry: PortfolioEntry,
-	type: PortfolioEntry['type'][0],
-	text: string,
-)}
-	{#if entry.type.includes(type)}
-		<div class="type">{text}</div>
-	{/if}
-{/snippet}
-
-{#snippet dateFinishedAndTypes(
-	entry: PortfolioEntry,
-	opts: { mobile: boolean },
-)}
-	<div class={opts.mobile ? 'mobile' : 'tablet-and-desktop'}>
-		<div class="date-finished">
-			{dateFinishedFormatter.format(entry.dateFinished)}
-		</div>
-		{@render typeEl(entry, 'oc', '💡 original creation')}
-		{@render typeEl(entry, 'game', '👾 game')}
-		{@render typeEl(entry, 'chiptune', '🔉 chiptune')}
-		{@render typeEl(entry, 'animation', '▶️ animation')}
-		{@render typeEl(entry, 'pixel_art', '🎨 pixel art')}
-	</div>
-{/snippet}
 
 <section class="entry-container" role="listitem">
 	<div class="artwork-and-mobile-finished-and-types">
 		<ArtworkThumbnail {entry} />
-		{@render dateFinishedAndTypes(entry, { mobile: true })}
+		<ArtworkDateFinishedAndTypes {entry} mobile />
 	</div>
 	<div class="artwork-info">
 		<div class="details">
 			<h1 class="details-title">{entry.title}</h1>
 			<div class="details-rest">
-				{@render dateFinishedAndTypes(entry, { mobile: false })}
+				<ArtworkDateFinishedAndTypes {entry} />
 				<div style:flex={1}>
 					<ArtworkDescription
 						descriptionParagraphs={entry.descriptionParagraphs}
@@ -65,22 +35,6 @@
 </section>
 
 <style lang="scss">
-	.tablet-and-desktop {
-		display: block;
-
-		@include bkp2() {
-			display: none;
-		}
-	}
-
-	.mobile {
-		display: none;
-
-		@include bkp2() {
-			display: block;
-		}
-	}
-
 	.entry-container {
 		display: flex;
 		margin: 1rem auto;
@@ -174,33 +128,6 @@
 		@include bkp1 {
 			grid-column-gap: 0.8rem;
 			grid-row-gap: 0.8rem;
-		}
-	}
-
-	.date-finished {
-		margin-bottom: 1rem;
-		font-size: 1rem;
-
-		@include bkp1 {
-			font-size: 0.8rem;
-		}
-
-		@include bkp3 {
-			margin-bottom: 0.25rem;
-			font-size: 0.7rem;
-		}
-	}
-
-	.type {
-		font-size: 0.8rem;
-
-		@include bkp1 {
-			font-size: 0.7rem;
-		}
-
-		@include bkp3 {
-			line-height: 16px;
-			font-size: 0.6rem;
 		}
 	}
 </style>
