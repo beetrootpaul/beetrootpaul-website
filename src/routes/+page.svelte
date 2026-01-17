@@ -40,7 +40,7 @@
 		<img src={asset(logoImage)} alt="logo" />
 		<h1>beetrootpaul</h1>
 		<h2 class="header-content-subtitle">
-			pixel art<br />chiptune<br />game dev
+			pixel artist<br />indie game dev<br />creator of beetpx.dev
 		</h2>
 	</div>
 	<div class="links">
