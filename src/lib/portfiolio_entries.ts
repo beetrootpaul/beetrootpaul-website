@@ -282,7 +282,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '145-no-longer-a-hero',
 		title: 'No Longer a Hero',
 		artwork: {
-			youtubeUrl: 'https://youtu.be/D7zTWePkF88',
+			youtubeUrl: 'https://youtube.com/shorts/n6J0nhhcCtE',
 			thumbnail: DEBUG
 				? // Debug: Non-square low image.
 					'nolongerahero_x1_debug_low.gif'
@@ -317,7 +317,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 			instagramUrl:
 				'https://twitter.com/beetrootpaul/status/1500782518110466051',
 			xUrl: 'https://x.com/beetrootpaul/status/1500782518110466051',
-			youtubeUrl: 'https://youtu.be/D7zTWePkF88',
+			youtubeUrl: 'https://youtube.com/shorts/n6J0nhhcCtE',
 		},
 		progress: [
 			{
