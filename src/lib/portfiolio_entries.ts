@@ -282,7 +282,10 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '145-no-longer-a-hero',
 		title: 'No Longer a Hero',
 		artwork: {
-			youtubeUrl: 'https://www.youtube.com/shorts/n6J0nhhcCtE',
+			// The official share URL is https://youtube.com/shorts/n6J0nhhcCtE, but fslightbox does not work well
+			// with `/shorts/` URLs (and also expects `www.` if it is not a `youtu.be` short form). Therefore,
+			// I manually composed this apparently working URL, supported by fslightbox.
+			youtubeUrl: 'https://youtu.be/n6J0nhhcCtE',
 			thumbnail: DEBUG
 				? // Debug: Non-square low image.
 					'nolongerahero_x1_debug_low.gif'
