@@ -282,7 +282,7 @@ export const portfolioEntries: PortfolioEntry[] = [
 		slug: '145-no-longer-a-hero',
 		title: 'No Longer a Hero',
 		artwork: {
-			youtubeUrl: 'https://youtube.com/shorts/n6J0nhhcCtE',
+			youtubeUrl: 'https://www.youtube.com/shorts/n6J0nhhcCtE',
 			thumbnail: DEBUG
 				? // Debug: Non-square low image.
 					'nolongerahero_x1_debug_low.gif'
