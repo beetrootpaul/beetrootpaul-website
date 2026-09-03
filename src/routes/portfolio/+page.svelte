@@ -19,7 +19,7 @@
 	onMount(() => {
 		const fsLightboxScript = document.createElement('script');
 		fsLightboxScript.src = asset(
-			'/third_party/fslightbox-basic-3.7.4/fslightbox.js',
+			'/third_party/fslightbox-basic-3.8.0/fslightbox.js',
 		);
 		fsLightboxScript.onload = () => {
 			console.log('Loaded: fslightbox');
